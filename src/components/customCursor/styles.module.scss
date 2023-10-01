@@ -1,0 +1,10 @@
+@import '../../styles/main.scss';
+
+.cursor{
+    position: fixed;
+    background-color: $base;
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: .5;
+    border-radius: 50%;
+}
