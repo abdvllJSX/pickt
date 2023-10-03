@@ -1,7 +1,14 @@
-import Head from 'next/head'
+'use  client';
+import { useEffect } from 'react';
+import Head from 'next/head';
 import Header from '@/components/header/header'
 import Cusor from '../components/customCursor';
+import scroll from '@/animation/scroll';
+
 export default function Home() {
+  useEffect(() => {
+    scroll()
+  })
   return (
     <>
       <Head>

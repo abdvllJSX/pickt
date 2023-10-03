@@ -1,4 +1,152 @@
 @import "../../styles/main.scss";
-.me{
-    color: $red;
+
+.nav__bar {
+    width: 100vw;
+    display: flex;
+    padding-inline: 5rem;
+    align-items: last baseline;
+    justify-content: space-between;
+    height: 7rem;
+
+    @include md-screen {
+        position: relative;
+        align-items: center;
+        gap: 2rem;
+        height: 8rem;
+        padding-inline: 0;
+        padding-left: 4rem;
+    }
+
+    .nav__left {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+
+        @include md-screen {
+            width: 100%;
+        }
+
+        .logo {
+            width: 10rem;
+
+            @include md-screen {
+                width: 13.5rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .input__container {
+            position: relative;
+            width: 28rem;
+            height: 4.5rem;
+
+            @include md-screen {
+                width: 100%;
+                height: 5.5rem;
+            }
+
+            .nav__input {
+                border: none;
+                font-size: 1.7rem;
+                text-indent: 4rem;
+                width: 100%;
+                height: 100%;
+                background: 0 0;
+                border-radius: 1.2rem;
+                background-color: transparent;
+                background-image: url("/inputSearch.svg");
+                background-repeat: no-repeat;
+                background-size: 1.8rem;
+                background-position: 0.81vw;
+
+
+                @include md-screen {
+                    text-indent: 1rem;
+                    background-position: 96%;
+                    background-size: 2.3rem;
+                    border-radius: 1rem;
+                }
+
+                &::placeholder {
+                    color: #BEBCC5;
+                    font-weight: 400;
+                }
+
+            }
+
+            .nav__input:focus {
+                outline: none;
+                border: 1px solid $base;
+            }
+        }
+
+    }
+
+    .nav__right {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        @include md-screen {
+            display: none;
+        }
+
+        .nav__list {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            .nav__link {
+                font-size: 1.7rem;
+                color: black;
+                font-weight: 500;
+
+                &:last-child {
+                    color: $base;
+                }
+            }
+
+            .line {
+                height: 3rem;
+                width: 1px;
+                background-color: $base
+            }
+        }
+
+        .nav__btn {
+            font-family: inherit;
+            background-color: $base;
+            color: white;
+            font-weight: 500;
+            font-size: 1.6rem;
+            padding: 1.5rem 2.8rem;
+            border-radius: 1.5rem;
+        }
+    }
+
+    .hamburger {
+        display: none;
+
+        @include md-screen {
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column-reverse;
+            aspect-ratio: 64/56;
+            gap: 1.5rem;
+            background-color: $base;
+            height: 100%;
+        }
+        span{
+            height: 1px;
+            display: inline-block;
+            background-color: #fff;
+            width: 4rem;
+        }
+    }
 }
