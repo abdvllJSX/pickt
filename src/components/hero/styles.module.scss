@@ -1,0 +1,131 @@
+@import "../../styles/main.scss";
+
+.hero {
+    padding-inline: 8rem;
+    text-align: center;
+    min-height: 91vh;
+    padding-block: max(13vh, 15px + max(56px, 12rem));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &_text {
+            margin-bottom: 5rem;
+
+            h1 {
+                font-weight: 600;
+                font-size: max(8rem, 30px);
+                letter-spacing: -.047em;
+                padding: max(4.8rem, 15px);
+                border-radius: max(4.6rem, 15px);
+                width: -moz-fit-content;
+                width: fit-content;
+                margin-inline: auto;
+                position: relative;
+                white-space: nowrap;
+            }
+
+            h1:first-child {
+                background: #efedfc;
+                color: #5e48bd;
+                z-index: 1;
+                transform: rotate(.77deg);
+            }
+
+            h1:nth-child(2) {
+                background: #fff8eb;
+                color: #f8ac12;
+                margin-block: -1.7361111111vw -.2893518519vw;
+            }
+
+            h1:nth-child(3) {
+                color: #04ad68;
+                background: #e6f6f0;
+                transform: rotate(-2.8deg);
+            }
+
+        }
+    }
+
+    &_image_decors {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        margin-top: max(56px, 12rem);
+        pointer-events: none;
+
+        &_decor:first-child {
+            left: 2.3148148148vw;
+            top: 10.8325872874vh;
+
+            .hero_image_decors_decor_card {
+                left: -12%;
+                bottom: -5.3715308863vh;
+                transform: rotate(15.9deg);
+                width: max(33rem, 200px);
+            }
+        }
+
+        &_decor:nth-child(2) {
+            left: 2.3148148148vw;
+            top: 39.3912264996vh;
+
+            .hero_image_decors_decor_card {
+                left: -15%;
+                bottom: -7.1620411817vh;
+                transform: rotate(.14deg);
+                width: max(29rem, 180px);
+            }
+        }
+
+        &_decor:nth-child(3) {
+            right: 4.0509259259vw;
+            top: 4.5658012534vh;
+
+            .hero_image_decors_decor_card {
+                left: -15%;
+                bottom: -7.1620411817vh;
+                transform: rotate(.14deg);
+                width: max(29rem, 180px);
+            }
+        }
+
+        &_decor:nth-child(4) {
+            right: 4.0509259259vw;
+            top: 40.376007162vh;
+
+            .hero_image_decors_decor_card {
+                left: -15%;
+                bottom: -7.1620411817vh;
+                transform: rotate(.14deg);
+                width: max(29rem, 180px);
+            }
+        }
+
+        &_decor {
+            position: absolute;
+
+            &_avater {
+                width: max(27rem, 160px);
+                height: max(27rem, 160px);
+                aspect-ratio: 1/1;
+            }
+
+
+
+            &_card {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}

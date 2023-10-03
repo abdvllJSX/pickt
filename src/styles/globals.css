@@ -6,7 +6,18 @@
 }
 
 html {
-  font-size: 66.6%;
+  overflow-x: hidden;
+  scroll-behavior: auto;
+  overscroll-behavior: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 10px;
+  font-size: min(10px,.5787037037vw);
+  line-height: 1;
+  scrollbar-width: 0;
+  --gutter: max(40px,13rem);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Header from '@/components/header/header'
 import Cusor from '../components/customCursor';
 import scroll from '@/animation/scroll';
-
+import Hero from "../components/hero"
 export default function Home() {
   useEffect(() => {
     scroll()
@@ -20,6 +20,7 @@ export default function Home() {
       <main>
         <Header />
         <Cusor />
+        <Hero /> 
       </main>
     </>
   )

@@ -3,10 +3,10 @@
 .nav__bar {
     width: 100vw;
     display: flex;
-    padding-inline: 5rem;
-    align-items: last baseline;
+    padding-inline: 8rem;
+    // align-items: last baseline;
     justify-content: space-between;
-    height: 7rem;
+    height: max(56px, 12rem);
 
     @include md-screen {
         position: relative;
@@ -19,7 +19,7 @@
 
     .nav__left {
         display: flex;
-        gap: 2.5rem;
+        gap: 4rem;
         align-items: center;
 
         @include md-screen {
@@ -27,7 +27,7 @@
         }
 
         .logo {
-            width: 10rem;
+            width: max(14.6rem, 100px);
 
             @include md-screen {
                 width: 13.5rem;
@@ -41,8 +41,8 @@
 
         .input__container {
             position: relative;
-            width: 28rem;
-            height: 4.5rem;
+            width: max(250px, 40rem);
+            height: max(6rem, 46px);
 
             @include md-screen {
                 width: 100%;
@@ -60,7 +60,7 @@
                 background-color: transparent;
                 background-image: url("/inputSearch.svg");
                 background-repeat: no-repeat;
-                background-size: 1.8rem;
+                background-size: max(16px, 2.4rem);
                 background-position: 0.81vw;
 
 
@@ -98,10 +98,10 @@
         .nav__list {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: max(3rem, 10px);
 
             .nav__link {
-                font-size: 1.7rem;
+                font-size: max(18px, 2rem);
                 color: black;
                 font-weight: 500;
 
@@ -118,13 +118,13 @@
         }
 
         .nav__btn {
+            padding: max(2.25rem, 14px) max(4rem, 30px);
+            border-radius: max(2rem, 10px);
+            background: #5e48db;
+            color: #fff;
             font-family: inherit;
-            background-color: $base;
-            color: white;
+            font-size: max(18px,2rem);
             font-weight: 500;
-            font-size: 1.6rem;
-            padding: 1.5rem 2.8rem;
-            border-radius: 1.5rem;
         }
     }
 
@@ -142,7 +142,8 @@
             background-color: $base;
             height: 100%;
         }
-        span{
+
+        span {
             height: 1px;
             display: inline-block;
             background-color: #fff;
