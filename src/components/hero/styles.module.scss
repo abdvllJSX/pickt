@@ -49,7 +49,16 @@
                 background: #e6f6f0;
                 transform: rotate(-2.8deg);
             }
+        }
 
+        &__p {
+            font-weight: 500;
+            line-height: 1.45;
+            letter-spacing: -.016em;
+            width: max(45rem, 400px);
+            font-size: max(18px,2rem);
+            margin-inline: auto;
+            margin-bottom: 3.5810205909vh;
         }
     }
 

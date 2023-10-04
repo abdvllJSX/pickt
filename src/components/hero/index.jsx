@@ -1,5 +1,6 @@
 import styles from './styles.module.scss'
 export default function index() {
+   
     const images = [
         {
             image: "/home_image_1.png",
@@ -37,7 +38,7 @@ export default function index() {
                 {
                     images.map((image, index) => (
                         <div className={styles.hero_image_decors_decor} key={index}>
-                           <img src={`${image.image}`} alt="" className={styles.hero_image_decors_decor_avater} style={{width: "224px", height: "224px"}}/>
+                           <img src={`${image.image}`} alt="" className={styles.hero_image_decors_decor_avater} />
                            <img src={`${image.subImage}`} alt=""  className={styles.hero_image_decors_decor_card}/>
                         </div>
                     ))

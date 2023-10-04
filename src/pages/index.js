@@ -7,6 +7,7 @@ import scroll from '@/animation/scroll';
 import Hero from "../components/hero"
 export default function Home() {
   useEffect(() => {
+    console.log(window.innerWidth)
     scroll()
   })
   return (
