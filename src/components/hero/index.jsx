@@ -2,6 +2,7 @@ import styles from './styles.module.scss'
 export default function index() {
    
     const images = [
+
         {
             image: "/home_image_1.png",
             subImage: "/chat-card-1.svg"
@@ -19,6 +20,7 @@ export default function index() {
             subImage: "/chat_card_4.svg"
         },
     ]
+
     return (
         <section className={styles.hero}>
             <div className={styles.hero__center}>

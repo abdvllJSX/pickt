@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import "./Header";
+import React, { useState, useEffect, forwardRef } from 'react';
 import styles from "./styles.module.scss";
-export default function Header() {  
+
+const Header = forwardRef(function index(props, ref) {
     return (
         <>
             <nav className={styles.nav__bar}>
                 <div className={styles.nav__left}>
                     <div className={styles.logo}>
-                        <img src="/pickt-logo.svg" alt="" />
+                        <img ref={ref} src="/pickt-logo.svg" alt="" />
                     </div>
 
-                    <div className={styles.input__container}>
-                        <input aria-label="search" type="text" className={styles.nav__input} />
-                      
+                    <div className={styles.input__container} >
+                        <input ref={ref} aria-label="search" type="text" className={styles.nav__input} />
                     </div>
                 </div>
 
@@ -35,4 +33,5 @@ export default function Header() {
             </nav>
         </>
     )
-}
+})
+export default Header;
