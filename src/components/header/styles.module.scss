@@ -142,7 +142,7 @@
     @include md-screen {
         display: block;
         position: fixed;
-        z-index: 1;
+        z-index: 5;
         // height: 100%;
         padding-right: 0;
         align-items: center;
@@ -151,6 +151,10 @@
     }
     .nav__left{
         display: flex;
+        background-color: white;
+        position: relative;
+        z-index: 5;
+        transition: all .5s ease-out;
         gap: 4rem;
         padding-left: 8rem;
         height: max(56px, 15rem);
@@ -212,11 +216,10 @@
                 display: flex;
                 justify-content: center;
                 aspect-ratio: 64/56;
-                // transition: all 1s cubic-bezier(0.19,1,0.22,1);
+                transition: all 1s cubic-bezier(0.19,1,0.22,1);
             }
     
             span {
-                // transition: transform .5s var(--ease-out-cubic);
                 transition: rotate 0.5s cubic-bezier(0.33, 1, 0.68, 1);
                 display: inline-block;
                 transform-origin: center;
@@ -229,8 +232,10 @@
     }
 
     .nav__mobile__list{
+        z-index: 2;
         overflow: hidden;
         height: 100%;
+        transform-origin: bottom;
         position: fixed;
         padding-inline: 8rem;
         background: #5e48db;
@@ -246,6 +251,31 @@
             font-weight: 500;
             font-size: max(9rem,28px);
             color: #fff;
+        }
+
+        .nav__mobile__btn{
+            display: flex;
+            gap: 2rem;
+            align-self: center;
+           
+            button{
+                background: transparent;
+                
+                font-weight: 500;
+                margin-top: max(3.5vh, 20px);
+                font-size: max(14px,4rem);
+                width: max(45rem,159px);
+                aspect-ratio: 159/52;
+                border-radius: max(12px,2rem);
+            }
+            button:first-of-type{
+                border: 1px solid hsl(0,0%, 100%, .2);
+                color: white;
+            }
+            button:last-of-type{
+                background-color: #fff;
+                color: $base;
+            }
         }
     }
 

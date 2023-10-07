@@ -1,10 +1,13 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { animate, motion, useMotionValue, useSpring, AnimatePresence, transform, easeIn, delay } from "framer-motion";
 import styles from "./styles.module.scss";
 
 const Header = forwardRef(function index(props, ref) {
+    const mobileLinkAnim = {
+        initial: { transform: "translate(0px, 70px) rotateX(10deg)", opacity: 0 },
+        animate: { transform: "translate(0px, 0px) rotateX(0deg)", opacity: 1 }
+    }
     const [isActive, setIsActive] = useState(false)
-
     return (
         <>
             <nav className={styles.nav__bar}>
@@ -32,34 +35,35 @@ const Header = forwardRef(function index(props, ref) {
 
             </nav>
             <div className={styles.nav__mobile}>
-                {isActive &&
-                    <motion.div className={styles.nav__left} animate={{background: ""}}>
-                        <div className={styles.logo}>
-                            <img ref={ref} src="/pickt-logo.svg" alt="" />
-                        </div>
+                <motion.div className={styles.nav__left} animate = {isActive ? {backgroundColor: "#5E48DB", transition: {duration: .5, ease: "easeIn"}} : {backgroundColor: "#fff", transition: {delay: .8, ease: "easeIn", duration: .5}}}>
+                    <div className={styles.logo}>
+                        <img ref={ref} src={isActive ? "/logowhite.svg" : "/pickt-logo.svg"} alt="" />
+                    </div>
 
-                        <div className={styles.input__container} >
-                            <input ref={ref} aria-label="search" type="text" className={styles.nav__input} />
-                        </div>
+                    <div className={styles.input__container} >
+                        <input ref={ref} aria-label="search" type="text" className={styles.nav__input} />
+                    </div>
 
-                        <button className={styles.hamburger} style={isActive ? { gap: "0" } : {}} onClick={() => { setIsActive(prevIsActive => !prevIsActive) }}>
-                            <span style={isActive ? { rotate: "45deg" } : { rotate: "0deg" }}></span>
-                            <span style={isActive ? { rotate: "-45deg" } : { rotate: "0deg" }}></span>
-                        </button>
-                    </motion.div>
-                }
+                    <button className={styles.hamburger} style={isActive ? { gap: "0", backgroundColor: "white", } : {}} onClick={() => { setIsActive(prevIsActive => !prevIsActive) }}>
+                        <span style={isActive ? { rotate: "45deg", backgroundColor: "#5E48DB" } : { rotate: "0deg" }}></span>
+                        <span style={isActive ? { rotate: "-45deg", backgroundColor: "#5E48DB" } : { rotate: "0deg" }}></span>
+                    </button>
+                </motion.div>
 
-                {isActive &&
-                    <motion.ul className={styles.nav__mobile__list} initial={{ transform: "translateY(-356px)" }} animate={{ transform: "translateY(0)" }}>
-                        <li className={styles.nav__mobile__link}>About Pickt</li>
-                        <li className={styles.nav__mobile__link}>FAQs</li>
-                        <li className={styles.nav__mobile__link}>Contact us</li>
-
-                        <button className={styles.nav__mobile__btn}>Log in</button>
-                        <button className={styles.nav__mobile__btn}>Sign up</button>
-                    </motion.ul>
-
-                }
+                
+                    <AnimatePresence mode="wait">
+                        {isActive &&
+                        <motion.ul className={styles.nav__mobile__list} initial={{ transform: "translateY(-100%)", transition: { duration: .6, ease: [0.7, 0, 0.84, 0]} } } animate={{ transform: "translateY(0)", transition: { duration: .7, ease: [0.87, 0, 0.13, 1] } }} exit={{transform: "translateY(-100%)", transition: { duration: .7, ease: [0.16, 1, 0.3, 1], delay: .7 } }}>
+                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.6, ease: [0.5, 1, 0.89, 1] }} exit={ {transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0 , transition: { delay: .4 }, duration: .7 }} className={styles.nav__mobile__link}>About Pickt</motion.li>
+                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.7, ease: [0.5, 1, 0.89, 1] }} exit={ {transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0 , transition: { delay: .3 }, duration: .7 }} className={styles.nav__mobile__link}>FAQs</motion.li>
+                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.8, ease: [0.5, 1, 0.89, 1] }} exit={ {transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0 , transition: { delay: .2 }, duration: .7 }} className={styles.nav__mobile__link}>Contact us</motion.li>
+                            <div className={styles.nav__mobile__btn}>
+                                <motion.button initial={{opacity: 0, transition: {delay: 1, duration: .5}}} animate={{opacity: 1, transition: {delay: 1.2, duration: .5}} } exit={{opacity: 0, transition: { duration: .5}}}>Log in</motion.button>
+                                <motion.button initial={{opacity: 0, transition: {delay: 1, duration: .5}}} animate={{opacity: 1, transition: {delay: 1.2, duration: .5}} } exit={{opacity: 0, transition: { duration: .5}}}>Sign up</motion.button>
+                            </div>
+                        </motion.ul>}
+                    </AnimatePresence>
+                
             </div>
         </>
     )
