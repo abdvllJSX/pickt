@@ -38,3 +38,18 @@ a {
 button{
     border: none;
 }
+
+/* Hide the default scroll bars */
+::-webkit-scrollbar {
+  display: none; /* Adjust the width as needed */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Make the track invisible */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Customize the color of the scroll thumb */
+}

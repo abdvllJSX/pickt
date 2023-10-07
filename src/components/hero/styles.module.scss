@@ -34,7 +34,7 @@
             h1:first-child {
                 background: #efedfc;
                 color: #5e48bd;
-                z-index: 1;
+                // z-index: 1;
                 transform: rotate(.77deg);
             }
 
@@ -136,5 +136,16 @@
                 left: 0;
             }
         }
+    }
+
+    .hero__btn{
+        font-weight: 600;
+        white-space: nowrap;
+        padding: max(2.5rem,15px) max(4.5rem,25px);
+        border-radius: max(2rem,15px);
+        color: #fff;
+        background: #5e48db;
+        font-size: max(18px,2rem);
+        transition: all .5s var(--ease-out-quart);
     }
 }

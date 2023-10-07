@@ -34,6 +34,7 @@ export default function index() {
                     from all walks of life to connect, share information
                     and get paid for their time.
                 </p>
+                <div className={styles.hero__btn}>Get Sarted</div>
             </div>
 
             <div className={styles.hero_image_decors}>
@@ -45,7 +46,9 @@ export default function index() {
                         </div>
                     ))
                 }
+
             </div>
+         
         </section>
     )
 }

@@ -3,6 +3,7 @@
 .cursor{
     position: fixed;
     background-color: $base;
+    z-index: 10;
     pointer-events: none;
     opacity: .7;
     border-radius: 50%;
