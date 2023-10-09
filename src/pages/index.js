@@ -1,15 +1,19 @@
-'use  client';
+'use client';
 import { useEffect, useRef } from 'react';
 import Head from 'next/head';
+import Meet from '../components/meet';
 import Header from '../components/header';
 import Cusor from '../components/customCursor';
 import scroll from '@/animation/scroll';
+import split from '../animation/text';
 import Hero from "../components/hero"
 
 export default function Home() {
   useEffect(() => {
     scroll()
   })
+
+ 
   const reduceCursor = useRef(null)
   return (
     <>
@@ -20,9 +24,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header ref={reduceCursor}/>
-        <Cusor reduceCursor = {reduceCursor}/>
-        <Hero /> 
+        <Header ref={reduceCursor} />
+        <Cusor reduceCursor={reduceCursor} />
+        <Hero />
+        <Meet />
       </main>
     </>
   )
