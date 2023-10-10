@@ -13,17 +13,16 @@
         padding-top: max(15rem, 100px);
         padding-left: 16rem;
 
-        &__image {
-            border: 1px solid red;
-            position: absolute;
-            right: min(-15rem, -50px);
-            bottom: min(-5rem, -20px);
-            width: max(18.5rem, 70px);
-        }
-
         &__header {
+            position: relative;
 
-            // display: flex;
+            &__image {
+                position: absolute;
+                right: min(-15rem, -50px);
+                bottom: min(-5rem, -20px);
+                width: max(18.5rem, 70px);
+            }
+
             &__text {
                 display: block;
                 color: white;

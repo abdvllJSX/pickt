@@ -53,3 +53,8 @@ button{
 ::-webkit-scrollbar-thumb {
   background: #888; /* Customize the color of the scroll thumb */
 }
+
+button{
+  background-color: transparent;
+  border: none;
+}

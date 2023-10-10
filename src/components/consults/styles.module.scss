@@ -1,0 +1,158 @@
+@import '../../styles/main.scss';
+
+.consults__container {
+    background: #020813;
+    padding-top: max(70px, 16rem);
+    overflow: hidden;
+
+    &__top {
+        display: flex;
+        padding-bottom: max(12rem, 80px);
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-left: 16rem;
+
+        h2 {
+            width: max(270px, 71rem);
+            color: #fff;
+            font-weight: 700;
+            font-size: max(36px, 9.6rem);
+            line-height: 104.1%;
+            letter-spacing: -.036em;
+
+            span {
+                color: #2dc3f5;
+            }
+        }
+
+        &__right {
+            display: flex;
+            justify-content: flex-end;
+            gap: max(2rem, 15px);
+            padding-right: 12rem;
+
+            button {
+                border: 1px solid hsla(0, 0%, 100%, .4);
+                width: max(11rem, 80px);
+                height: max(11rem, 80px);
+                border-radius: 100%;
+                transition: all .5s var(--ease-out-quad);
+            }
+        }
+
+    }
+
+    &__bottom {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        gap: max(2.5rem, 15px);
+        margin-top: min(11rem, 80px);
+        margin-left: 12rem;
+
+        &__card {
+            width: 40rem;
+            flex-shrink: 0;
+            width: calc((100% - ($slides-to-Show-desktop - 1)* max(2.5rem, 15px))/$slides-to-Show-desktop);
+            padding: max(1rem, 8px);
+            background: #fff;
+            transition: transform .7s ease-in;
+            position: relative;
+            border-radius: max(3.2rem, 16px);
+
+            @include md-screen {
+                width: calc((100% - ($slides-to-Show-md - 1)* max(2.5rem, 15px))/$slides-to-Show-md);
+            }
+
+            .img {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                position: relative;
+                border-radius: max(2.7rem, 16px);
+
+                img {
+                    aspect-ratio: 311/290;
+
+                    overflow: hidden;
+
+                }
+            }
+
+            &__top__occupation {
+                display: inline-flex;
+                align-items: center;
+                gap: max(1rem, 5px);
+                padding: max(.6rem, 5px) max(1.6rem, 10px) max(.6rem, 5px) max(.6rem, 5px);
+                border-radius: max(100px, 20rem);
+                background: #fff;
+                font-weight: 600;
+                letter-spacing: -.006em;
+                color: #020813;
+                position: absolute;
+                bottom: max(1.5rem, 10px);
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+            }
+
+            &__bottom {
+                padding: max(2.5rem, 16px) max(2rem, 14px);
+
+                .header {
+                    display: flex;
+                    justify-content: space-around;
+
+                    // align-items: center;
+                    p {
+                        font-weight: 600;
+                        letter-spacing: -.006em;
+                        color: #0a0a0a;
+                        font-size: max(15px, 1.8rem);
+                        margin-bottom: max(1.5rem, 10px);
+                    }
+
+                    img {
+                        height: 10px;
+                    }
+                }
+
+                .contact {
+                    display: flex;
+                    align-items: center;
+                    gap: max(1rem, 10px);
+
+                    p {
+                        font-size: max(18px, 2.4rem);
+                        font-weight: 600;
+                        letter-spacing: -.006em;
+                        color: #34260c;
+
+                        span{
+                            font-weight: 400;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        padding-block: max(70px,16rem) max(100px,16rem);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        .btn{
+            font-weight: 500;
+            letter-spacing: -.016em;
+            color: #fff;
+            width: max(22.7rem,170px);
+            height: max(7.2rem,50px);
+            background: #f8ab11;
+            border-radius: max(2rem,12px);
+            transition: all .5s var(--ease-out-quart);
+            font-size: max(18px,2rem);
+        }
+    }
+}

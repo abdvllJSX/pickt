@@ -5,7 +5,7 @@ import Meet from '../components/meet';
 import Header from '../components/header';
 import Cusor from '../components/customCursor';
 import scroll from '@/animation/scroll';
-import split from '../animation/text';
+import Consults from '../components/consults';
 import Hero from "../components/hero"
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     scroll()
   })
 
- 
+
   const reduceCursor = useRef(null)
   return (
     <>
@@ -28,6 +28,7 @@ export default function Home() {
         <Cusor reduceCursor={reduceCursor} />
         <Hero />
         <Meet />
+        <Consults />
       </main>
     </>
   )
