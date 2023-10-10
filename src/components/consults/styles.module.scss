@@ -128,7 +128,7 @@
                         letter-spacing: -.006em;
                         color: #34260c;
 
-                        span{
+                        span {
                             font-weight: 400;
                             font-size: 15px;
                         }
@@ -137,22 +137,23 @@
             }
         }
     }
-    footer{
-        padding-block: max(70px,16rem) max(100px,16rem);
+
+    footer {
+        padding-block: max(70px, 16rem) max(100px, 16rem);
         align-items: center;
         display: flex;
         justify-content: center;
 
-        .btn{
+        .btn {
             font-weight: 500;
             letter-spacing: -.016em;
             color: #fff;
-            width: max(22.7rem,170px);
-            height: max(7.2rem,50px);
+            width: max(22.7rem, 170px);
+            height: max(7.2rem, 50px);
             background: #f8ab11;
-            border-radius: max(2rem,12px);
-            transition: all .5s var(--ease-out-quart);
             font-size: max(18px,2rem);
+            border-radius: max(2rem, 12px);
+            transition: all .5s var(--ease-out-quart);
         }
     }
 }

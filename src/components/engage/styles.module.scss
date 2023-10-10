@@ -1,0 +1,155 @@
+@import "../../styles/main.scss";
+
+
+.engage__container{
+    padding-top: max(70px, 16rem);
+    overflow: hidden;
+
+    &__top {
+        display: flex;
+        padding-bottom: max(12rem, 80px);
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-left: 16rem;
+
+        h2 {
+            position: relative;
+            width: max(250px,62rem);
+            color: black;
+            font-weight: 700;
+            font-size: max(36px, 9.6rem);
+            line-height: 104.1%;
+            letter-spacing: -.036em;
+
+            img{
+                position: absolute;
+                transform: translateY(-25px);
+                right: 1rem;
+            }
+
+            span {
+                color: #ef3867;
+            }
+        }
+
+        &__right {
+            display: flex;
+            justify-content: flex-end;
+            gap: max(2rem, 15px);
+            padding-right: 12rem;
+
+            button {
+                border: 1px solid  #ef3867;
+                width: max(11rem, 80px);
+                height: max(11rem, 80px);
+                border-radius: 100%;
+                transition: all .5s var(--ease-out-quad);
+
+                svg{
+                    path{
+                        stroke: #ef3867;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__bottom{
+        margin-left: 12rem;
+        overflow: hidden;
+
+        &__carousel{
+            will-change: transform;
+            touch-action: pan-y;
+            display: flex;
+            gap: max(2.5rem, 15px);
+            box-sizing: border-box;
+
+            &__item{
+                position: relative;
+                box-sizing: border-box;
+                flex-shrink: 0;
+                border-radius: max(2.7rem,16px);
+                overflow: hidden;
+                width: calc((100% - ($slides-to-Show-desktop__cel - 1) * max(2.5rem, 15px))/$slides-to-Show-desktop__cel);
+
+                @include md-screen{
+                    width: calc((100% - ($slides-to-Show-md__cel - 1) * max(2.5rem, 15px))/$slides-to-Show-md__cel);
+                }
+
+
+                img{
+                    width: 100%;
+                    aspect-ratio: 448/450;
+                    height: auto;
+                }
+
+                figcaption{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: max(4rem,20px);
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    h2{
+                        font-weight: 600;
+                        color: #fff;
+                        white-space: nowrap;
+                        margin-bottom: max(1rem,10px);
+                        font-size: max(18px,2.4rem);
+                    }
+                    p{
+                        display: flex;
+                        color: white;
+                        align-items: center;
+                        gap: max(1rem,10px);
+                        font-weight: 600;
+                        letter-spacing: -.006em;
+                        color: #fff;
+                        font-size: max(18px,2.4rem);
+
+                        img{
+                            font-size: max(18px,2.4rem);
+                        }
+                        span{
+                            font-size: 15px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            &__item::after{
+                content: "";
+                background: linear-gradient(180deg,transparent,rgba(0,0,0,.75));
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+        }
+    }
+    footer{
+        padding-block: max(70px,16rem) max(100px,16rem);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        .btn{
+            font-weight: 500;
+            letter-spacing: -.016em;
+            color: #fff;
+            width: max(22.7rem,170px);
+            height: max(7.2rem,50px);
+            background: #020813;
+            font-size: max(18px,2rem);
+            border-radius: max(2rem,12px);
+            transition: all .5s var(--ease-out-quart);
+        }
+    }
+}

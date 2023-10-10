@@ -6,7 +6,8 @@ import Header from '../components/header';
 import Cusor from '../components/customCursor';
 import scroll from '@/animation/scroll';
 import Consults from '../components/consults';
-import Hero from "../components/hero"
+import Hero from "../components/hero";
+import Engage from "../components/engage";
 
 export default function Home() {
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function Home() {
         <Hero />
         <Meet />
         <Consults />
+        <Engage />
       </main>
     </>
   )
