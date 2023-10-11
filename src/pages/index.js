@@ -8,12 +8,12 @@ import scroll from '@/animation/scroll';
 import Consults from '../components/consults';
 import Hero from "../components/hero";
 import Engage from "../components/engage";
+import Live from "../components/live";
 
 export default function Home() {
   useEffect(() => {
     scroll()
   })
-
 
   const reduceCursor = useRef(null)
   return (
@@ -31,6 +31,7 @@ export default function Home() {
         <Meet />
         <Consults />
         <Engage />
+        <Live />
       </main>
     </>
   )

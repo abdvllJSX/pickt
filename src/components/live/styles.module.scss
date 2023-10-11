@@ -1,0 +1,188 @@
+@import "../../styles/main.scss";
+
+.live__container {
+    background: #f8ac12;
+    padding-top: max(70px, 16rem);
+    overflow: hidden;
+
+    &__top {
+        display: flex;
+        padding-bottom: max(12rem, 80px);
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-left: 16rem;
+
+        h2 {
+            width: max(270px, 71rem);
+            color: #fff;
+            font-weight: 700;
+            position: relative;
+            
+            font-size: max(36px, 9.6rem);
+            line-height: 104.1%;
+            letter-spacing: -.036em;
+
+            .image1{
+                position: absolute;
+                transform: translateY(-2rem);
+                width: max(14rem,80px);
+            }
+
+            .image2{
+                position: absolute;
+                bottom: max(20px,5rem);
+                width: max(9rem,50px);
+            }
+
+            span {
+                color: black;
+            }
+        }
+
+        &__right {
+            display: flex;
+            justify-content: flex-end;
+            gap: max(2rem, 15px);
+            padding-right: 12rem;
+
+            button {
+                border: 1px solid hsla(0, 0%, 100%, .4);
+                width: max(11rem, 80px);
+                height: max(11rem, 80px);
+                border-radius: 100%;
+                transition: all .5s var(--ease-out-quad);
+            }
+        }
+
+    }
+
+    &__bottom {
+        margin-left: 12rem;
+
+        &__carousel {
+            overflow: hidden;
+            will-change: transform;
+            touch-action: pan-y;
+            display: flex;
+            gap: max(2.5rem, 15px);
+            box-sizing: border-box;
+
+            &__card {
+                padding: max(1rem, 8px);
+                background: #fff;
+                width: calc((100% - ($slides-to-Show-desktop__live - 1) * max(2.5rem, 15px)) / $slides-to-Show-desktop__live);
+                border-radius: max(3.2rem, 20px);
+
+                @include md-screen {
+                    width: calc((100% - ($slides-to-Show-md__live - 1) * max(2.5rem, 15px)) / $slides-to-Show-md__live);
+                }
+
+                &__top {
+
+                    .card__img {
+                        position: relative;
+                        width: 100%;
+                        object-fit: cover;
+                        overflow: hidden;
+                        border-radius: max(2.7rem, 16px);
+                        aspect-ratio: 527/272;
+                        height: auto;
+
+
+                        img {}
+
+                        figcaption {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: max(1rem, 5px);
+                            padding: max(.6rem, 5px) max(1.6rem, 10px) max(.6rem, 5px) max(.6rem, 5px);
+                            border-radius: max(100px, 20rem);
+                            background: #fff;
+                            font-weight: 600;
+                            letter-spacing: -.006em;
+                            color: #020813;
+                            position: absolute;
+                            bottom: max(1.5rem, 10px);
+                            left: 50%;
+                            transform: translateX(-50%);
+                            min-width: 240px;
+
+                            p {
+                                display: inline-flex;
+                                align-items: center;
+                                gap: max(.5rem, 5px);
+                                font-size: max(12px, 1.2rem);
+
+                                img {
+                                    width: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__bottom {
+                padding: max(2.5rem, 16px) max(2rem, 14px);
+
+                h2 {
+                    gap: max(.5rem, 5px);
+                    font-weight: 600;
+                    letter-spacing: -.006em;
+                    color: #0a0a0a;
+                    font-size: max(16px, 1.8rem);
+                    margin-bottom: max(1.5rem, 10px);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: block;
+                }
+
+                .price {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    img {
+                        width: max(3.6rem, 24px);
+                        height: max(3.6rem, 24px);
+                    }
+
+                    p {
+                        font-size: max(18px, 2.4rem);
+                        gap: max(1rem, 10px);
+                        font-weight: 600;
+                        letter-spacing: -.006em;
+                        color: #34260c;
+                        white-space: nowrap;
+
+                        span {
+                            font-weight: 500;
+                            color: #b5b3ae;
+                            font-size: max(14px, 1.4rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        padding-block: max(70px, 16rem) max(100px, 16rem);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        .btn {
+            font-weight: 500;
+            letter-spacing: -.016em;
+            color: #fff;
+            width: max(22.7rem, 170px);
+            height: max(7.2rem, 50px);
+            background: #020813;
+            font-size: max(18px, 2rem);
+            border-radius: max(2rem, 12px);
+            transition: all .5s var(--ease-out-quart);
+        }
+    }
+}
