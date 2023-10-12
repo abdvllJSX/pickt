@@ -9,11 +9,14 @@ import Consults from '../components/consults';
 import Hero from "../components/hero";
 import Engage from "../components/engage";
 import Live from "../components/live";
+import About from "../components/about";
+import Faqs from "../components/faqs";
 
+// SMOOTH SCROLL
 export default function Home() {
-  useEffect(() => {
-    scroll()
-  })
+  // useEffect(() => {
+  //   scroll()
+  // })
 
   const reduceCursor = useRef(null)
   return (
@@ -32,6 +35,8 @@ export default function Home() {
         <Consults />
         <Engage />
         <Live />
+        <About />
+        <Faqs />
       </main>
     </>
   )

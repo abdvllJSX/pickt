@@ -1,0 +1,62 @@
+@import "../../styles/main.scss";
+
+.faqs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: max(30px,3rem);
+    gap: max(30px,3rem);
+    padding-inline: max(40px, 13rem);
+    width: 100%;
+    // position: relative;
+    max-width: 1920px;
+    margin-inline: auto;
+    &__left{
+        width: fit-content;
+        height: fit-content;
+
+        &__header{
+            font-weight: 700;
+            line-height: 114.6%;
+            letter-spacing: -.042em;
+            position: sticky;
+            height: fit-content;
+            top: max(56px,12rem);
+            border: 1px solid red;
+            color: #2e2e2e;
+            font-size: max(30px,6.4rem);
+        }
+    }
+
+    &__right{
+        .faqs__card{
+            margin-bottom: max(10px,1.5rem);
+            background: #fafafa;
+            border-radius: max(2.4rem,10px);
+            padding: max(3.2rem,10px);
+            // height: ;
+            transition: all .5s ease-in-out;
+
+            h1{
+                font-weight: 500;
+                line-height: 1.6;
+                letter-spacing: -.006em;
+                color: #0a0a0a;
+                text-align: left;
+                font-size: max(18px,2rem);
+
+            }
+
+            p{
+                text-align: left;
+                font-weight: 400;
+                line-height: 1.64;
+                letter-spacing: -.006em;
+                color: #6d6c75;
+                width: 100%;
+
+                margin-top: .5787037037vw;
+                font-size: max(16px,1.8rem);
+            }
+        }
+    }
+}

@@ -116,7 +116,7 @@ export default function index() {
 
 
 
-    console.log(currentArray)
+    // console.log(currentArray)
     return (
         <section className={styles.consults__container}>
             <div className={styles.consults__container__top}>

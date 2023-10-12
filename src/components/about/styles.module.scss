@@ -1,0 +1,152 @@
+@import "../../styles/main.scss";
+
+.about {
+    width: 100%;
+    padding-block: max(20rem, 100px);
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        margin-bottom: max(70px, 10rem);
+        font-weight: 600;
+        line-height: 112.1%;
+        text-align: center;
+        align-self: center;
+        font-size: max(36px, 9.6rem);
+        letter-spacing: -.042em;
+        color: #030303;
+        width: max(111rem, 500px);
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: max(1rem, 10px);
+
+        &__left {
+            width: fit-content;
+            position: relative;
+            margin-top: -30rem;
+
+            .about {
+                position: relative;
+                width: 77.3rem;
+                // aspect-ratio: 980/1233;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .balance {
+                width: max(32rem, 180px);
+                aspect-ratio: 320/178;
+                position: absolute;
+                right: 10%;
+                top: 30%;
+                // transform: translateY(-100%);
+            }
+        }
+
+        &__right {
+            // flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            &__top {
+                p {
+                    font-size: max(18px, 2rem);
+                    width: max(38rem, 350px);
+                    font-weight: 600;
+                    line-height: 162.6%;
+                    letter-spacing: -.021em;
+                    color: #293a40;
+                    margin-bottom: max(20px, 4rem);
+                }
+
+                .btn {
+                    font-weight: 500;
+                    letter-spacing: -.016em;
+                    color: #fff;
+                    width: max(18.3rem, 130px);
+                    height: max(7.2rem, 45px);
+                    background: #5e48db;
+                    border-radius: max(2rem, 10px);
+                    transition: all .5s var(--ease-out-quart);
+                }
+            }
+
+            &__bottom {
+                width: max(250px, 48rem);
+                margin-top: 30rem;
+                margin-left: auto;
+                font-weight: 700;
+                line-height: 114.6%;
+                text-align: right;
+                margin: calc(max(40px, 13rem) + 8rem);
+                letter-spacing: -.042em;
+                color: #2e2e2e;
+                font-size: max(30px, 6.4rem);
+            }
+        }
+    }
+
+    &__grid {
+        padding-inline: calc(max(40px, 13rem) + 8rem);
+        margin-top: -30rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(max(40rem, 250px), 1fr));
+        grid-gap: max(2.5rem, 20px);
+        gap: max(2.5rem, 20px);
+        margin-block: max(60px, 10rem);
+
+        @include md-screen {
+            padding-inline: 16rem;
+            margin-top: 0;
+        }
+
+        .card {
+            padding: max(4rem, 20px);
+            background: #fafafa;
+            border-radius: max(4rem, 20px);
+
+            img {
+                width: max(12rem, 70px);
+                height: max(12rem, 70px);
+                margin-bottom: max(1.5rem, 10px);
+            }
+
+            h4 {
+                font-weight: 700;
+                color: #020813;
+                margin-bottom: max(1.5rem, 10px);
+                font-size: max(18px, 2.4rem);
+            }
+
+            p {
+                font-weight: 500;
+                line-height: 153%;
+                letter-spacing: -.006em;
+                color: #293a40;
+                font-size: max(16px, 1.8rem);
+            }
+        }
+    }
+
+    footer {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        button {
+            color: #fff;
+            text-align: center;
+            font-size: max(18px,2.4rem);
+            width: max(21rem, 140px);
+            height: max(21rem, 140px);
+            background: #5e48db;
+            border-radius: 100%;
+            height: max(21rem, 140px);
+            transition: all .5s var(--ease-out-quart);
+        }
+    }
+}
