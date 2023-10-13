@@ -2,12 +2,12 @@
 
 .faqs{
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 1fr;
     grid-gap: max(30px,3rem);
     gap: max(30px,3rem);
     padding-inline: max(40px, 13rem);
     width: 100%;
-    // position: relative;
     max-width: 1920px;
     margin-inline: auto;
     &__left{
@@ -18,11 +18,10 @@
             font-weight: 700;
             line-height: 114.6%;
             letter-spacing: -.042em;
-            position: sticky;
             height: fit-content;
-            top: max(56px,12rem);
-            border: 1px solid red;
             color: #2e2e2e;
+            position: sticky;
+            top: max(56px,12rem);
             font-size: max(30px,6.4rem);
         }
     }
@@ -32,9 +31,13 @@
             margin-bottom: max(10px,1.5rem);
             background: #fafafa;
             border-radius: max(2.4rem,10px);
-            padding: max(3.2rem,10px);
-            // height: ;
-            transition: all .5s ease-in-out;
+            padding-inline: max(3.2rem,10px);
+            padding-block: 1rem;
+            // height: 7rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: height .5s ease-in-out;
 
             h1{
                 font-weight: 500;

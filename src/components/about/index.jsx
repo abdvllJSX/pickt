@@ -1,7 +1,6 @@
 import styles from "./styles.module.scss";
 
 export default function index() {
-
     // GRID ARRAY
     const gridItems = [
         {
