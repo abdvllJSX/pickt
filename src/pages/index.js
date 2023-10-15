@@ -97,10 +97,9 @@ export default function Home() {
 
         if (loadedCount === totalImages) {
           // All images are loaded
-
           setTimeout(() => {
             setLoaderVisible(false);
-          }, 100)
+          }, 2500)
           
         }
       };
