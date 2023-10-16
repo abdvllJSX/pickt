@@ -77,8 +77,8 @@ export default function Home() {
   ];
   const reduceCursor = useRef(null)
   const [loadedImages, setLoadedImages] = useState(0);
-  const [totalImages, setTotalImages] = useState(imageSources.length);
   const [loaderVisible, setLoaderVisible] = useState(true);
+  const totalImages = imageSources.length;
 
   useEffect(() => {
     scroll()
@@ -90,17 +90,15 @@ export default function Home() {
     imageSources.forEach((src) => {
       const img = new Image();
       img.src = src;
-
       img.onload = () => {
         loadedCount++;
         setLoadedImages(Math.floor((loadedCount / totalImages) * 100));
 
         if (loadedCount === totalImages) {
-          // All images are loaded
+          // WAITING FIVE SECONDS FOR THR POST ANIMATION TO RU
           setTimeout(() => {
             setLoaderVisible(false);
-          }, 2500)
-          
+          }, 2000)
         }
       };
     });
@@ -109,8 +107,6 @@ export default function Home() {
   useEffect(() => {
     loadImages();
   }, []);
-
-  // console.log(loaderVisible)
 
   return (
     <>

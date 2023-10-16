@@ -1,6 +1,7 @@
 @import "../../styles/main.scss";
 
 .loader__container{
+   
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -13,22 +14,25 @@
 
     .background{
         display: flex;
+        position: relative;
         .colur{
             width: 100vw;
             height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
+
         }
         .colur:first-child{
             z-index: 1;
-            width: 110vw;
+            width: 150vw;
             background: #5e48db;
             transform: translateX(-75%);
         }
         .colur:nth-child(2){
             z-index: 2;
             background: #2dc3f5;
+            width: 100vw;
             transform: translateX(25%);
         }
         .colur:nth-child(3){
@@ -40,6 +44,27 @@
             z-index: 4;
             background: #04ad68;
             transform: translateX(75%);
+        }
+    }
+
+    .texts{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: grid;
+        place-content: center;
+        height: 100%;
+        // border: 1px solid red;
+
+        h1{
+            font-weight: 600;
+            letter-spacing: -.016em;
+            // color: #fff;
+            position: relative;
+            z-index: 10;
+            line-height: .9;
+            font-size: max(36px,9.6rem);
         }
     }
 }
