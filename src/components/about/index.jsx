@@ -39,7 +39,7 @@ export default function index() {
     return (
         <section className={styles.about}>
 
-            <h3 className={styles.about__header}>
+            <h3 className={styles.about__header} data-animation-id ='paragraph'>
                 Share the voice and grit behind your greatest works, knowledge and ideas.
             </h3>
 
@@ -51,7 +51,7 @@ export default function index() {
 
                 <div className={styles.about__content__right}>
                     <div className={styles.about__content__right__top}>
-                        <p>
+                        <p data-animation-id ='paragraph'>
                             Pickt empowers creatives and professionals with a variety of tools to produce and market products like ebooks, courses, coaching programs in their digital portfolio
                         </p>
                         <button className={styles.btn}>Get Started</button>

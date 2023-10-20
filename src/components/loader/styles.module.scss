@@ -1,70 +1,72 @@
 @import "../../styles/main.scss";
 
-.loader__container{
-   
+.loader__container {
+    position: fixed;
+    z-index: 50;
+    background-color: #fff;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     display: grid;
     place-content: center;
-    p{
 
+    p {
         font-size: 2.5rem;
         color: blue;
     }
 
-    .background{
+    .background {
         display: flex;
         position: relative;
-        .colur{
+
+        .colur {
             width: 100vw;
             height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
+        }
 
-        }
-        .colur:first-child{
+        .colur:first-child {
             z-index: 1;
-            width: 150vw;
             background: #5e48db;
-            transform: translateX(-75%);
         }
-        .colur:nth-child(2){
+
+        .colur:nth-child(2) {
             z-index: 2;
             background: #2dc3f5;
-            width: 100vw;
-            transform: translateX(25%);
         }
-        .colur:nth-child(3){
+
+        .colur:nth-child(3) {
             z-index: 3;
             background: #f8ac12;
-            transform: translateX(50%);
         }
-        .colur:nth-child(4){
+
+        .colur:nth-child(4) {
             z-index: 4;
             background: #04ad68;
-            transform: translateX(75%);
         }
     }
 
-    .texts{
+    .texts {
         position: absolute;
         width: 100%;
         top: 0;
+        display: none;
         left: 0;
         display: grid;
         place-content: center;
         height: 100%;
-        // border: 1px solid red;
 
-        h1{
+        h1 {
             font-weight: 600;
             letter-spacing: -.016em;
-            // color: #fff;
+            color: #fff;
             position: relative;
             z-index: 10;
             line-height: .9;
-            font-size: max(36px,9.6rem);
+            font-size: max(36px, 9.6rem);
         }
     }
 }

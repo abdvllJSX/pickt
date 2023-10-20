@@ -12,10 +12,14 @@ import Engage from "../components/engage";
 import Live from "../components/live";
 import About from "../components/about";
 import Faqs from "../components/faqs";
+import split from "../animation/text";
 import Loader from "../components/loader";
 
-// SMOOTH SCROLL
 export default function Home() {
+
+  useEffect(() => {
+    split();
+  });
   const imageSources = [
     '/about.png',
     '/akpovire.jpeg',
@@ -73,7 +77,7 @@ export default function Home() {
     "/startup.svg",
     '/US.svg',
     '/vercel.svg',
-    'withdrawals.svg'
+    '/withdrawals.svg'
   ];
   const reduceCursor = useRef(null)
   const [loadedImages, setLoadedImages] = useState(0);
@@ -81,6 +85,7 @@ export default function Home() {
   const totalImages = imageSources.length;
 
   useEffect(() => {
+    // SMOOTH SCROLL
     scroll()
   })
 
@@ -95,10 +100,10 @@ export default function Home() {
         setLoadedImages(Math.floor((loadedCount / totalImages) * 100));
 
         if (loadedCount === totalImages) {
-          // WAITING FIVE SECONDS FOR THR POST ANIMATION TO RU
+          // WAITING TWO AND HALF SECONDS FOR THR POST ANIMATION TO DISPLAY
           setTimeout(() => {
             setLoaderVisible(false);
-          }, 2000)
+          }, 3000)
         }
       };
     });
@@ -117,24 +122,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* { */}
-        {/* // loaderVisible ? */}
-        <AnimatePresence mode='wait'>
-          <Loader loadedImages={loadedImages} loaderVisible={loaderVisible} />
-        </AnimatePresence>
+        {
 
-        {/* // <>
-            //   <Header ref={reduceCursor} />
-            //   <Cusor reduceCursor={reduceCursor} />
-            //   <Hero />
-            //   <Meet />
-            //   <Consults />
-            //   <Engage />
-            //   <Live />
-            //   <About />
-            //   <Faqs />
-            // </> */}
-        {/* } */}
+          <AnimatePresence mode='wait'>
+            loaderVisible ?
+            <Loader loadedImages={loadedImages} loaderVisible={loaderVisible} />
+            :
+            <>
+              <Header ref={reduceCursor} />
+              <Cusor reduceCursor={reduceCursor} />
+              <Hero loaderVisible={loaderVisible} loadedImages={loadedImages} />
+              <Meet />
+              <Consults />
+              <Engage />
+              <Live />
+              <About />
+              <Faqs />
+            </>
+          </AnimatePresence>
+        }
       </main>
     </>
   )

@@ -53,7 +53,6 @@ export default function index() {
         })
         setIsOpen(updatedItem)
     }
-    console.log(isopen)
     return (
         <div className={styles.faqs}>
             <div className={styles.faqs__left}>

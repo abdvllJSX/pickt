@@ -45,14 +45,14 @@ export default function index() {
 
                 <div className={styles.meet__container__top__left}>
                     <div className={styles.circles__container}>
-                        {[...Array(3)].map((circle, index) => {
+                        {[...Array(3)].map((_, index) => {
                             return (
                                 <div className={styles.circle} key={index}></div>
                             )
                         })}
                     </div>
                     <div className={styles.meet__container__card}>
-                        <p className={styles.meet__container__card__paragraph}>
+                        <p className={styles.meet__container__card__paragraph} data-animation-id ='paragraph'>
                             Curate a community of your favorite people.
                             meet with beautiful minds. Get value for your
                             time.

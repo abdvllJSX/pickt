@@ -12,10 +12,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 10px;
-  font-size: min(10px,.5787037037vw);
+  font-size: min(10px, 0.5787037037vw);
   line-height: 1;
   scrollbar-width: 0;
-  --gutter: max(40px,13rem);
+  --gutter: max(40px, 13rem);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -34,9 +34,8 @@ a {
   text-decoration: none;
 }
 
-
-button{
-    border: none;
+button {
+  border: none;
 }
 
 /* Hide the default scroll bars */
@@ -54,7 +53,12 @@ button{
   background: #888; /* Customize the color of the scroll thumb */
 }
 
-button{
+button {
   background-color: transparent;
   border: none;
+}
+span.word_wrap {
+  border: 1px solid red;
+  overflow: hidden;
+  display: inline-block;
 }
