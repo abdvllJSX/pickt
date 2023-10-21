@@ -37,10 +37,10 @@ export default function index() {
             <div className={styles.meet__container__top}>
                 <div className={styles.meet__container__top__header}>
                     <img src="/exclaim.svg" alt="" className={styles.meet__container__top__header__image} />
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text}>meet</h2>
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text}>talk</h2>
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text}>know</h2>
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text}>thrive</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >meet</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >talk</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >know</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >thrive</h2>
                 </div>
 
                 <div className={styles.meet__container__top__left}>

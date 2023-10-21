@@ -1,51 +1,54 @@
 // import Splitting from "splitting";
+import SplitType from "split-type";
 import { IO } from "./observe";
 import { gsap } from "gsap";
-// import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect } from "react";
-// gsap.registerPlugin(ScrollTrigger);
 
 export default function split() {
-    const p = document.querySelectorAll("[data-animation-id ='paragraph']");
+    const p = document.querySelectorAll("[data-animation-id = 'paragraph']");
+    const H = document.querySelectorAll("[data-animation-id = 'header']")
+
+
     p.forEach((item) => {
-        import('splitting').then(({ default: Splitting }) => {
-            // Pass the options to the Splitting function
-            const line = Splitting({
-                target: item,
-                by: "lines",
-            });
-
-            line.forEach((splitResult) => {
-
-                const wrappedLines = splitResult.words
-                    .map(
-                        (wordsArr) => `
-                           <span class="word_wrap">
-                                 ${wordsArr.outerHTML}
-                            </span>`
-                    )
-                    .join("");
-                splitResult.el.innerHTML = wrappedLines;
-                console.log(splitResult.words)
-            });
-            gsap.set(item.querySelectorAll(".word"), {
+        const text = new SplitType(item).lines
+        text.forEach((text) => {
+            gsap.set(text.querySelectorAll(".word"), {
                 yPercent: 105,
                 opacity: 0,
                 rotateX: 50,
                 transformStyle: "preserve-3d",
             });
-            IO(item, { threshold: 0.8 }).then(() => {
-                const elem = item.querySelectorAll(".word");
+            IO(text, { threshold: 0.8 }).then(() => {
+                const elem = text.querySelectorAll(".word");
                 gsap.to(elem, {
                     yPercent: 0,
                     opacity: 1,
                     rotateX: 0,
-                    stagger: elem.length > 100 ? 0.02 : 0.03,
+                    stagger: elem.length > 100 ? 0.05 : 0.06,
                     duration: elem.length > 100 ? 0.65 : 0.75,
                     ease: "easeOut",
                 });
             });
+        })
+    })
 
+    H.forEach((item) => {
+        const text = new SplitType(item).chars
+        gsap.set(item.querySelectorAll(".char"), {
+            opacity: 0,
+            yPercent: 100,
+            transformStyle: "preserve-3d",
         });
-    });
+        IO(item, {
+            threshold: 1,
+        }).then(() => {
+            const elem = item.querySelectorAll(".char");
+            gsap.to(elem, {
+                opacity: 1,
+                yPercent: 0,
+                stagger: elem.length > 100 ? 0.01 : 0.02,
+                duration: elem.length > 100 ? 0.5 : 0.6,
+                ease: "easeOut",
+            });
+        });
+    })
 };

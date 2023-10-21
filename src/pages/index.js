@@ -103,7 +103,7 @@ export default function Home() {
           // WAITING TWO AND HALF SECONDS FOR THR POST ANIMATION TO DISPLAY
           setTimeout(() => {
             setLoaderVisible(false);
-          }, 3000)
+          }, 3200)
         }
       };
     });

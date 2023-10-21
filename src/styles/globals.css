@@ -57,8 +57,11 @@ button {
   background-color: transparent;
   border: none;
 }
-span.word_wrap {
-  border: 1px solid red;
-  overflow: hidden;
+.line{
   display: inline-block;
+  overflow: hidden;
+
+  .word{
+    display: inline-block;
+  }
 }

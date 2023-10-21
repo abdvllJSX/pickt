@@ -57,7 +57,7 @@ export default function index() {
                         <button className={styles.btn}>Get Started</button>
                     </div>
 
-                    <h4 className={styles.about__content__right__bottom}>
+                    <h4 className={styles.about__content__right__bottom} data-animation-id ='paragraph'>
                         The perfect tools to monetize your time
                     </h4>
                 </div>
@@ -70,8 +70,8 @@ export default function index() {
                             // EACH CARD
                             <div className={styles.card} key={index}>
                                 <img src={card.img} alt={card.img} />
-                                <h4>{card.header}</h4>
-                                <p>{card.paragraph}</p>
+                                <h4 data-animation-id ='header'>{card.header}</h4>
+                                <p data-animation-id ='paragraph' >{card.paragraph}</p>
                             </div>
                         )
                     })
