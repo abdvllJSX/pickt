@@ -3,7 +3,7 @@ import { animate, motion, useMotionValue, useSpring, AnimatePresence } from "fra
 import styles from "./styles.module.scss";
 
 
-const Header = forwardRef(function index(props, ref) {
+const Header = forwardRef(function Index(props, ref) {
     const initialDelay = 2
 
     const mobileLinkAnim = {

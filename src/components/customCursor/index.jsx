@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import styles from './styles.module.scss';
 
 
-export default function index({ reduceCursor }) {
+export default function Index({ reduceCursor }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const cursorSize = isHovered ? 20 : 40;

@@ -1,9 +1,7 @@
 import styles from "./styles.module.scss";
-import { useState } from "react";
 import { motion, AnimatePresence,} from "framer-motion";
-import { images } from "../../../next.config";
 
-export default function index({ loadedImages, loaderVisible }) {
+export default function Index({ loadedImages, loaderVisible }) {
     const text = ["meet", "talk", "know", "thrive"]
     // COUNTER ANIMATION
     const counterAnime = {

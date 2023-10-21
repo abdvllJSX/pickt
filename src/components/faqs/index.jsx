@@ -1,8 +1,8 @@
 import { use, useState } from "react";
 import styles from "./styles.module.scss";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function index() {
+export default function Index() {
 
     const dropdown = [
         {
