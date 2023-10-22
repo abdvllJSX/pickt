@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import styles from './styles.module.scss';
 import Marquee from "react-fast-marquee";
+import { useEffect } from 'react';
+import gsap from 'gsap';
 
 export default function index() {
     const cards = [
@@ -32,27 +35,29 @@ export default function index() {
             text: 'Healthcare Professionals'
         }
     ]
+
+
     return (
         <section className={styles.meet__container}>
             <div className={styles.meet__container__top}>
                 <div className={styles.meet__container__top__header}>
                     <img src="/exclaim.svg" alt="" className={styles.meet__container__top__header__image} />
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >meet</h2>
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >talk</h2>
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >know</h2>
-                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id = 'header' >thrive</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id='header' >meet</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id='header' >talk</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id='header' >know</h2>
+                    <h2 data-animation="header" className={styles.meet__container__top__header__text} data-animation-id='header' >thrive</h2>
                 </div>
 
                 <div className={styles.meet__container__top__left}>
-                    <div className={styles.circles__container}>
+                    <div className={styles.circles__container} data-animation="ball-in">
                         {[...Array(3)].map((_, index) => {
                             return (
-                                <div className={styles.circle} key={index}></div>
+                                <div className={styles.circle} id='circle' key={index}></div>
                             )
                         })}
                     </div>
                     <div className={styles.meet__container__card}>
-                        <p className={styles.meet__container__card__paragraph} data-animation-id ='paragraph'>
+                        <p className={styles.meet__container__card__paragraph} data-animation-id='paragraph'>
                             Curate a community of your favorite people.
                             meet with beautiful minds. Get value for your
                             time.
@@ -65,10 +70,10 @@ export default function index() {
 
 
             <div className={styles.meet__container__bottom}>
-                <div className={styles.circles__container}>
-                    {[...Array(3)].map((circle, index) => {
+                <div className={styles.circles__container} data-animation="ball-in">
+                    {[...Array(3)].map((_, index) => {
                         return (
-                            <div className={styles.circle}></div>
+                            <div className={styles.circle} key={index} id='circle2'></div>
                         )
                     })}
                 </div>

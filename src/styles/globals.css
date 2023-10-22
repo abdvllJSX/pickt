@@ -58,10 +58,10 @@ button {
   border: none;
 }
 .line{
-  display: inline-block;
+  /* display: inline-block; */
   overflow: hidden;
 
-  .word{
+  /* .word{
     display: inline-block;
-  }
+  } */
 }

@@ -14,12 +14,14 @@ import About from "../components/about";
 import Faqs from "../components/faqs";
 import split from "../animation/text";
 import Loader from "../components/loader";
+import Footer from "../components/footer";
 
 export default function Home() {
 
   useEffect(() => {
     split();
-  });
+  }, []);
+  
   const imageSources = [
     '/about.png',
     '/akpovire.jpeg',
@@ -129,7 +131,7 @@ export default function Home() {
             <Loader loadedImages={loadedImages} loaderVisible={loaderVisible} />
             :
             <>
-              <Header ref={reduceCursor} />
+              <Header ref={reduceCursor} loaderVisible={loaderVisible} />
               <Cusor reduceCursor={reduceCursor} />
               <Hero loaderVisible={loaderVisible} loadedImages={loadedImages} />
               <Meet />
@@ -138,6 +140,7 @@ export default function Home() {
               <Live />
               <About />
               <Faqs />
+              <Footer />
             </>
           </AnimatePresence>
         }

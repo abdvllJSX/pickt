@@ -23,8 +23,10 @@
 
             img{
                 position: absolute;
-                transform: translateY(-25px);
-                right: 1rem;
+                z-index: 2;
+                bottom: 14rem;
+                right: 8rem;
+                width: max(8.7rem,40px);
             }
 
             span {

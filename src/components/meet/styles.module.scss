@@ -52,6 +52,7 @@
                     display: inline-block;
                     background: #8b7be2;
                     border-radius: 100%;
+                    transition: opacity 0.1s ease-in;
                     margin-right: max(4rem, 20px);
                 }
             }
@@ -90,8 +91,10 @@
         .circles__container {
             position: absolute;
             bottom: 22.3813786929vh;
+            
 
             .circle {
+                
                 width: max(30rem, 150px);
                 height: max(30rem, 150px);
                 display: inline-block;

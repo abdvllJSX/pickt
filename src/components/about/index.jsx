@@ -68,8 +68,8 @@ export default function index() {
                     gridItems.map((card, index) => {
                         return (
                             // EACH CARD
-                            <div className={styles.card} key={index}>
-                                <img src={card.img} alt={card.img} />
+                            <div className={styles.card} key={index} data-animation = "scale-svg">
+                                <img src={card.img} alt={card.img} id = "svgImageAnime"  />
                                 <h4 data-animation-id ='header'>{card.header}</h4>
                                 <p data-animation-id ='paragraph' >{card.paragraph}</p>
                             </div>

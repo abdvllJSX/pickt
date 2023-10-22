@@ -1,0 +1,100 @@
+.footer {
+    display: flex;
+    width: 100vw;
+    margin-inline: auto;
+    align-items: center;
+    padding-inline: max(40px, 13rem);
+    flex-direction: column;
+    position: relative;
+    padding-block: max(8rem, 50px);
+    min-height: 100vh;
+    background: #5e48db;
+    color: #fff;
+    text-align: center;
+
+    &__top {
+        position: relative;
+        z-index: 1;
+
+        h2 {
+            font-weight: 600;
+            line-height: 131%;
+            text-align: center;
+            letter-spacing: -.036em;
+            color: #fff;
+            width: max(82rem, 450px);
+            margin-bottom: max(20px, 3rem);
+            font-size: max(24px, 4rem);
+        }
+
+        &__input {
+            border: 1px solid hsla(0, 0%, 100%, .3);
+            border-radius: max(1.8rem, 14px);
+            width: -moz-fit-content;
+            width: fit-content;
+            display: flex;
+            margin-inline: auto;
+            padding: 4px;
+
+            input {
+                height: max(5.2rem, 40px);
+                width: max(28rem, 200px);
+                background: 0 0;
+                border: none;
+                outline: none;
+                text-indent: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: -.006em;
+                color: #fff;
+            }
+
+            button {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__bottom {
+        margin-top: max(80px, 12rem);
+        position: relative;
+        z-index: 1;
+
+        &__links {
+            gap: max(20px, 5rem);
+            margin-bottom: max(7rem, 40px);
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: max(70px, 12.8rem);
+            margin-top: max(30px, 5rem);
+        }
+
+        p {
+            color: #dfdbf6;
+            gap: max(.8rem, 5px);
+            font-size: max(14px, 1.6rem);
+        }
+    }
+
+    aside {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        gap: max(2rem, 15px);
+        margin-top: max(5rem, 25px);
+        display: flex;
+        align-items: center;
+
+        p{
+            font-size: max(14px,1.6rem);
+        }
+    }
+
+}

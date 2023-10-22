@@ -1,6 +1,6 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Index() {
 
@@ -42,8 +42,37 @@ export default function Index() {
         },
     ]
 
-    const [isopen, setIsOpen] = useState(dropdown)
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            // console.log('Current Scroll Position:', scrollY);
+        };
 
+        // Add a scroll event listener when the component mounts
+        window.addEventListener('scroll', handleScroll);
+
+        // Remove the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []); 
+    const dropDownAnime = {
+        initial: {
+            transition: {
+                delay: .1,
+                duration: .7,
+                ease: [0.33, 1, 0.68, 1]
+            }
+        },
+        exit: {
+            transition: {
+                duration: .8,
+                ease: [0.33, 1, 0.68, 1]
+            }
+        }
+    }
+
+    const [isopen, setIsOpen] = useState(dropdown)
     const ToggleIsOpen = (index) => {
         const updatedItem = isopen.map((item, i) => {
             return {
@@ -54,25 +83,37 @@ export default function Index() {
         setIsOpen(updatedItem)
     }
     return (
-        <div className={styles.faqs}>
-            <div className={styles.faqs__left}>
-                <h2 className={styles.faqs__left__header}>
-                    Frequently asked
-                    Questions
-                </h2>
-            </div>
+        <div className={styles.faqs__container}>
+            <div className={styles.faqs}>
+                <div className={styles.faqs__left}>
+                    <h2 className={styles.faqs__left__header}>
+                        Frequently asked
+                        Questions
+                    </h2>
+                </div>
 
-            <div className={styles.faqs__right}>
-                {
-                    dropdown.map((card, index) => {
-                        return (
-                            <motion.div className={styles.faqs__card} key={index} onClick={() => { ToggleIsOpen(index) }} style={isopen[index].isOpen ? {height: "fit-content", transition: "all 0.5s ease-in-out"} : {height: "7rem"}}>
-                                <h1 className={styles.faqs__card__header}>{card.question}</h1>
-                                <p className={styles.faqs__card__answer} >{card.Answer}</p>
-                            </motion.div>
-                        )
-                    })
-                }
+                <div className={styles.faqs__right}>
+                    {
+                        dropdown.map((card, index) => {
+                            return (
+                                <motion.div layout className={styles.faqs__card} key={index} onClick={() => { ToggleIsOpen(index) }} >
+                                    <h1 className={styles.faqs__card__header}>{card.question}</h1>
+                                    <AnimatePresence mode="wait">
+                                        {isopen[index].isOpen &&
+                                            <p className={styles.faqs__card__answer} variant={dropDownAnime} exit="exit" initial="initial">{card.Answer}</p>}
+                                    </AnimatePresence>
+                                </motion.div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+            <div className={styles.footer}>
+                <h2>
+                    Didn’t find an answer?
+                    <br /> <span>Get in touch with us</span>
+                </h2>
+                <button className={styles.btn}>contact us</button>
             </div>
         </div>
     )

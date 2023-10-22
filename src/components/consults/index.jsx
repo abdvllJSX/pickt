@@ -81,7 +81,7 @@ export default function Index() {
     return (
         <section className={styles.consults__container}>
             <div className={styles.consults__container__top}>
-                <h2 data-animation-id ='paragraph'>Choose from <span> thousands of experts</span> to consults with</h2>
+                <h2 data-animation-id ='paragraph'>Choose from <span> thousands</span><span> of </span><span>experts </span>to consults with</h2>
                 <div className={styles.consults__container__top__right}>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">

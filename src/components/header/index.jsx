@@ -3,7 +3,7 @@ import { animate, motion, useMotionValue, useSpring, AnimatePresence } from "fra
 import styles from "./styles.module.scss";
 
 
-const Header = forwardRef(function Index(props, ref) {
+const Header = forwardRef(function Index({ loaderVisible }, ref) {
     const initialDelay = 2
 
     const mobileLinkAnim = {
@@ -13,22 +13,22 @@ const Header = forwardRef(function Index(props, ref) {
 
     const headerAnim = {
         initial: {
-          y: "-300px"
+            visibility: "hidden",
+
         },
 
         animate: {
-            y: "0",
+            visibility: "visible",
             transition: {
-                delay: initialDelay + 3.5,
-                duration: .7,
-                ease: [0.25, 1, 0.5, 1]
+                delay: initialDelay + .6,
+                duration: .6,
             }
         }
     }
     const [isActive, setIsActive] = useState(false)
     return (
-        <motion.div >
-            <motion.nav className={styles.nav__bar} >
+        <motion.div variants={headerAnim} initial="initial" animate={loaderVisible ? "initial" : "animate"}>
+            <motion.nav className={styles.nav__bar}>
                 <div className={styles.nav__left}>
                     <div className={styles.logo}>
                         <img ref={ref} src="/pickt-logo.svg" alt="" />
@@ -52,8 +52,8 @@ const Header = forwardRef(function Index(props, ref) {
 
 
             </motion.nav>
-            <motion.div className={styles.nav__mobile} >
-                <motion.div className={styles.nav__left} animate = {isActive ? {backgroundColor: "#5E48DB", transition: {duration: .5, ease: "easeIn"}} : {backgroundColor: "#fff", transition: {delay: .8, ease: "easeIn", duration: .5}}}>
+            <motion.div className={styles.nav__mobile}>
+                <motion.div className={styles.nav__left} animate={isActive ? { backgroundColor: "#5E48DB", transition: { duration: .5, ease: "easeIn" } } : { backgroundColor: "#fff", transition: { delay: .8, ease: "easeIn", duration: .5 } }}>
                     <div className={styles.logo}>
                         <img ref={ref} src={isActive ? "/logowhite.svg" : "/pickt-logo.svg"} alt="" />
                     </div>
@@ -69,18 +69,18 @@ const Header = forwardRef(function Index(props, ref) {
                 </motion.div>
 
                 <AnimatePresence mode="wait">
-                        {isActive &&
-                        <motion.ul className={styles.nav__mobile__list} initial={{ transform: "translateY(-100%)", transition: { duration: .6, ease: [0.7, 0, 0.84, 0]} } } animate={{ transform: "translateY(0)", transition: { duration: .7, ease: [0.87, 0, 0.13, 1] } }} exit={{transform: "translateY(-100%)", transition: { duration: .7, ease: [0.16, 1, 0.3, 1], delay: .7 } }}>
-                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.6, ease: [0.5, 1, 0.89, 1] }} exit={ {transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0 , transition: { delay: .4 }, duration: .7 }} className={styles.nav__mobile__link}>About Pickt</motion.li>
-                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.7, ease: [0.5, 1, 0.89, 1] }} exit={ {transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0 , transition: { delay: .3 }, duration: .7 }} className={styles.nav__mobile__link}>FAQs</motion.li>
-                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.8, ease: [0.5, 1, 0.89, 1] }} exit={ {transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0 , transition: { delay: .2 }, duration: .7 }} className={styles.nav__mobile__link}>Contact us</motion.li>
+                    {isActive &&
+                        <motion.ul className={styles.nav__mobile__list} initial={{ transform: "translateY(-100%)", transition: { duration: .6, ease: [0.7, 0, 0.84, 0] } }} animate={{ transform: "translateY(0)", transition: { duration: .7, ease: [0.87, 0, 0.13, 1] } }} exit={{ transform: "translateY(-100%)", transition: { duration: .7, ease: [0.16, 1, 0.3, 1], delay: .7 } }}>
+                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.6, ease: [0.5, 1, 0.89, 1] }} exit={{ transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0, transition: { delay: .4 }, duration: .7 }} className={styles.nav__mobile__link}>About Pickt</motion.li>
+                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.7, ease: [0.5, 1, 0.89, 1] }} exit={{ transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0, transition: { delay: .3 }, duration: .7 }} className={styles.nav__mobile__link}>FAQs</motion.li>
+                            <motion.li variants={mobileLinkAnim} initial={"initial"} animate={"animate"} transition={{ duration: 0.5, delay: 0.8, ease: [0.5, 1, 0.89, 1] }} exit={{ transform: "translate(0px, 50px) rotateX(10deg)", opacity: 0, transition: { delay: .2 }, duration: .7 }} className={styles.nav__mobile__link}>Contact us</motion.li>
                             <div className={styles.nav__mobile__btn}>
-                                <motion.button initial={{opacity: 0, transition: {delay: 1, duration: .5}}} animate={{opacity: 1, transition: {delay: 1.2, duration: .5}} } exit={{opacity: 0, transition: { duration: .5}}}>Log in</motion.button>
-                                <motion.button initial={{opacity: 0, transition: {delay: 1, duration: .5}}} animate={{opacity: 1, transition: {delay: 1.2, duration: .5}} } exit={{opacity: 0, transition: { duration: .5}}}>Sign up</motion.button>
+                                <motion.button initial={{ opacity: 0, transition: { delay: 1, duration: .5 } }} animate={{ opacity: 1, transition: { delay: 1.2, duration: .5 } }} exit={{ opacity: 0, transition: { duration: .5 } }}>Log in</motion.button>
+                                <motion.button initial={{ opacity: 0, transition: { delay: 1, duration: .5 } }} animate={{ opacity: 1, transition: { delay: 1.2, duration: .5 } }} exit={{ opacity: 0, transition: { duration: .5 } }}>Sign up</motion.button>
                             </div>
                         </motion.ul>}
-                 </AnimatePresence>
-                
+                </AnimatePresence>
+
             </motion.div>
         </motion.div>
     )

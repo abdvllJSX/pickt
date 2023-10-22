@@ -17,7 +17,6 @@
             color: #fff;
             font-weight: 700;
             position: relative;
-            
             font-size: max(36px, 9.6rem);
             line-height: 104.1%;
             letter-spacing: -.036em;
@@ -26,6 +25,7 @@
                 position: absolute;
                 transform: translateY(-2rem);
                 width: max(14rem,80px);
+                z-index: 2;
             }
 
             .image2{
