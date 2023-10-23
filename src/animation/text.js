@@ -8,6 +8,8 @@ export default function split() {
     const H = document.querySelectorAll("[data-animation-id = 'header']");
     const I = document.querySelectorAll('[data-animation = "scale-svg"]')
     const B = document.querySelectorAll('[data-animation = "ball-in"]')
+    const C = document.querySelectorAll('[data-animation = "card-in"]')
+    console.log(C)
 
     p.forEach((item) => {
         new SplitType(item, { types: "lines, words", })
@@ -65,7 +67,7 @@ export default function split() {
             gsap.to(elem, {
                 delay: .2,
                 scale: "1",
-                duration: .8,
+                duration: .2,
                 ease: [0.34, 1.56, 0.64, 1]
             });
         });
@@ -93,6 +95,31 @@ export default function split() {
                 x: "0",
                 stagger: "-.2",
                 transition: [0.25, 1, 0.5, 1]
+            });
+        });
+    })
+
+    C.forEach((card) => {
+        gsap.set(card.querySelectorAll("#card"), {
+            x: "40vw",
+            rotation: -4,
+            scale: 0.75,
+            opacity: ".4"
+        });
+
+        IO(card, {
+            threshold: .08,
+        }).then(() => {
+            const elem = card.querySelectorAll("#card");
+            gsap.to(elem, {
+                x: 0,
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                duration: .8,
+                stagger: .07,
+                opacity: 1,
+                ease: [0.22, 1, 0.36, 1],
             });
         });
     })

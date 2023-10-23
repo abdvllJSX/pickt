@@ -93,10 +93,10 @@ export default function Index() {
                     </button>
                 </div>
             </div>
-            <div className={styles.consults__container__bottom}>
+            <div className={styles.consults__container__bottom} data-animation = "card-in">
                 {consultants.map((consultant, index) => {
                     return (
-                        <div className={styles.consults__container__bottom__card} key={index}>
+                        <div className={styles.consults__container__bottom__card}  key={index} id="card">
                             <div className={styles.consults__container__bottom__card__top}>
                                 <div className={styles.img}>
                                     <img src={consultant.image} alt="" width={311} height={272} style={{ objectFit: "cover" }} />

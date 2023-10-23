@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 
 
 const Header = forwardRef(function Index({ loaderVisible }, ref) {
+    
     const initialDelay = 2
 
     const mobileLinkAnim = {
@@ -25,10 +26,16 @@ const Header = forwardRef(function Index({ loaderVisible }, ref) {
             }
         }
     }
+    useEffect(() => {
+        const element = document.getElementById("element")
+         const  { height } = element.getBoundingClientRect();
+         console.log(height)
+    }, [])
+   
     const [isActive, setIsActive] = useState(false)
     return (
-        <motion.div variants={headerAnim} initial="initial" animate={loaderVisible ? "initial" : "animate"}>
-            <motion.nav className={styles.nav__bar}>
+        <motion.div variants={headerAnim} initial="initial" animate={loaderVisible ? "initial" : "animate"} >
+            <motion.nav className={styles.nav__bar} id='element'>
                 <div className={styles.nav__left}>
                     <div className={styles.logo}>
                         <img ref={ref} src="/pickt-logo.svg" alt="" />

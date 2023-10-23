@@ -1,4 +1,6 @@
 import styles from "./styles.module.scss";
+import gsap from "gsap";
+import MagneticBtn from "@/animation/magneticbtn";
 
 export default function index() {
     // GRID ARRAY
@@ -39,7 +41,7 @@ export default function index() {
     return (
         <section className={styles.about}>
 
-            <h3 className={styles.about__header} data-animation-id ='paragraph'>
+            <h3 className={styles.about__header} data-animation-id='paragraph'>
                 Share the voice and grit behind your greatest works, knowledge and ideas.
             </h3>
 
@@ -51,13 +53,13 @@ export default function index() {
 
                 <div className={styles.about__content__right}>
                     <div className={styles.about__content__right__top}>
-                        <p data-animation-id ='paragraph'>
+                        <p data-animation-id='paragraph'>
                             Pickt empowers creatives and professionals with a variety of tools to produce and market products like ebooks, courses, coaching programs in their digital portfolio
                         </p>
                         <button className={styles.btn}>Get Started</button>
                     </div>
 
-                    <h4 className={styles.about__content__right__bottom} data-animation-id ='paragraph'>
+                    <h4 className={styles.about__content__right__bottom} data-animation-id='paragraph'>
                         The perfect tools to monetize your time
                     </h4>
                 </div>
@@ -68,17 +70,19 @@ export default function index() {
                     gridItems.map((card, index) => {
                         return (
                             // EACH CARD
-                            <div className={styles.card} key={index} data-animation = "scale-svg">
-                                <img src={card.img} alt={card.img} id = "svgImageAnime"  />
-                                <h4 data-animation-id ='header'>{card.header}</h4>
-                                <p data-animation-id ='paragraph' >{card.paragraph}</p>
+                            <div className={styles.card} key={index} data-animation="scale-svg">
+                                <img src={card.img} alt={card.img} id="svgImageAnime" />
+                                <h4 data-animation-id='header'>{card.header}</h4>
+                                <p data-animation-id='paragraph' >{card.paragraph}</p>
                             </div>
                         )
                     })
                 }
             </div>
             <footer>
-                <button>Get Started</button>
+                <MagneticBtn>
+                    <button>Get Started</button>
+                </MagneticBtn>
             </footer>
         </section>
     )

@@ -35,7 +35,7 @@ export default function index() {
     return (
         <section className={styles.live__container}>
             <div className={styles.live__container__top}>
-                <h2 data-animation = "scale-svg" data-animation-id='paragraph' >Join <img src="/live.svg" alt="" className={styles.image1} id = "svgImageAnime"/>  <span>live </span><span>broadcasts</span> with your favourite people<img src="/love.svg" id="svgImageAnime"  alt="" className={styles.image2} /></h2>
+                <h2 data-animation = "scale-svg" data-animation-id='paragraph' >Join <span>live </span><span>broadcasts</span> with your favourite people<img src="/love.svg" id="svgImageAnime"  alt="" className={styles.image2} /> <img src="/live.svg" alt="" className={styles.image1} id = "svgImageAnime"/></h2>
                 <div className={styles.live__container__top__right}>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -49,10 +49,10 @@ export default function index() {
             </div>
 
             <div className={styles.live__container__bottom}>
-                <div className={styles.live__container__bottom__carousel}>
+                <div className={styles.live__container__bottom__carousel} data-animation = "card-in">
                     {events.map((event, index) => {
                         return (
-                            <div className={styles.live__container__bottom__carousel__card} key={index}>
+                            <div className={styles.live__container__bottom__carousel__card} key={index} id="card">
                                 <div className={styles.live__container__bottom__carousel__card__top}>
                                     <div className={styles.card__img}>
                                         <img src={event.image} width={527} height={272} style={{ objectFit: "cover" }} alt={event.image} />

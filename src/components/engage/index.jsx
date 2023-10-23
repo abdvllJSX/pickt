@@ -43,11 +43,11 @@ export default function index() {
                 </div>
             </div>
 
-             <div className={styles.engage__container__bottom}>
+             <div className={styles.engage__container__bottom} data-animation = "card-in">
                 <div className={styles.engage__container__bottom__carousel}>
                     {celebrities.map((celebrity, index) => {
                         return(
-                            <div className={styles.engage__container__bottom__carousel__item} key={index}>
+                            <div className={styles.engage__container__bottom__carousel__item} key={index} id="card">
                                 <img src={celebrity.image} alt="" width={448} height={414} style={{objectFit: "cover"}}/>
                                 <figcaption>
                                     <h2>{celebrity.name}</h2>

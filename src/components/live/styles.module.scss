@@ -23,7 +23,8 @@
 
             .image1{
                 position: absolute;
-                transform: translateY(-2rem);
+                top: -2rem;
+                right: 32rem;                
                 width: max(14rem,80px);
                 z-index: 2;
             }
@@ -87,9 +88,6 @@
                         border-radius: max(2.7rem, 16px);
                         aspect-ratio: 527/272;
                         height: auto;
-
-
-                        img {}
 
                         figcaption {
                             display: inline-flex;

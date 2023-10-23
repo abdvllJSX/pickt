@@ -1,6 +1,7 @@
 import { use, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
+import MagneticBtn from "@/animation/magneticbtn";
 
 export default function Index() {
 
@@ -41,11 +42,10 @@ export default function Index() {
             isOpen: false
         },
     ]
-
     useEffect(() => {
         const handleScroll = () => {
-            const scrollY = window.scrollY || window.pageYOffset;
-            // console.log('Current Scroll Position:', scrollY);
+            const scrollY = Math.floor(window.scrollY || window.pageYOffset);
+            console.log(scrollY)
         };
 
         // Add a scroll event listener when the component mounts
@@ -55,7 +55,8 @@ export default function Index() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []); 
+    }, []);
+     
     const dropDownAnime = {
         initial: {
             transition: {
@@ -109,7 +110,7 @@ export default function Index() {
                 </div>
             </div>
             <div className={styles.footer}>
-                <h2>
+                <h2 data-animation-id = 'paragraph'>
                     Didn’t find an answer?
                     <br /> <span>Get in touch with us</span>
                 </h2>
