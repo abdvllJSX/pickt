@@ -141,6 +141,7 @@
     @include md-screen {
         display: block;
         position: fixed;
+        top: 0;
         z-index: 5;
         padding-right: 0;
         align-items: center;
@@ -164,8 +165,8 @@
                 aspect-ratio: 146/57;
 
             img {
-                width: 100%;
-                height: 100%;
+                width: max(22rem, 75px);
+                aspect-ratio: 146/57;
             }
         }
 
@@ -275,6 +276,26 @@
                 color: $base;
             }
         }
+    }
+
+    .nav__footer{
+        gap: max(1.5rem,10px);
+        margin-top: max(15vh,40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .last{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: max(4vh,20px);
+        gap: max(6rem,40px);
+        color: #dfdbf6;
+        font-size: max(12px,5rem);
+        white-space: nowrap;
+        color: #fff;
     }
 
 }

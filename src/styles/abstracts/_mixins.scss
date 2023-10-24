@@ -3,3 +3,9 @@
         @content;
     }
 }
+
+@mixin sm-screen {
+    @media (max-width: 500px) {
+        @content;
+    }
+}

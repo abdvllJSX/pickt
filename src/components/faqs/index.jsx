@@ -56,7 +56,7 @@ export default function Index() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-     
+
     const dropDownAnime = {
         initial: {
             transition: {
@@ -87,7 +87,7 @@ export default function Index() {
         <div className={styles.faqs__container}>
             <div className={styles.faqs}>
                 <div className={styles.faqs__left}>
-                    <h2 className={styles.faqs__left__header}>
+                    <h2 data-animation-id = 'paragraph' className={styles.faqs__left__header}>
                         Frequently asked
                         Questions
                     </h2>
@@ -110,11 +110,13 @@ export default function Index() {
                 </div>
             </div>
             <div className={styles.footer}>
-                <h2 data-animation-id = 'paragraph'>
+                <h2 data-animation-id='paragraph'>
                     Didn’t find an answer?
                     <br /> <span>Get in touch with us</span>
                 </h2>
-                <button className={styles.btn}>contact us</button>
+                <MagneticBtn>
+                    <button className={styles.btn}>contact us</button>
+                </MagneticBtn>
             </div>
         </div>
     )

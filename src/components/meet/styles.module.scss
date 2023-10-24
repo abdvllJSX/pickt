@@ -13,6 +13,11 @@
         padding-top: max(15rem, 100px);
         padding-left: 16rem;
 
+        @include sm-screen {
+            flex-direction: column;
+            padding-inline: 8rem;
+        }
+
         &__header {
             position: relative;
 
@@ -21,6 +26,7 @@
                 right: min(-15rem, -50px);
                 bottom: min(-5rem, -20px);
                 width: max(18.5rem, 70px);
+                
             }
 
             &__text {
@@ -40,10 +46,21 @@
             padding-right: 37rem;
             padding-top: max(80px, 12rem);
 
+            @include md-screen{
+                padding-inline: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             .circles__container {
                 position: absolute;
                 top: .8952551477vh;
                 right: 0;
+
+                @include md-screen{
+                    display: none;
+                }
 
 
                 .circle {
@@ -62,22 +79,35 @@
 
 
     &__card {
-        align-self: center;
-        width: max(55rem, 400px);
+        width: max(55rem,400px);
         background: #f8ab11;
-        border: clamp(3px, .5rem, 6px) solid #1f1d18;
-        border-radius: max(5.6rem, 30px);
+        border: clamp(3px,.5rem,6px) solid #1f1d18;
+        border-radius: max(5.6rem,30px);
         position: relative;
         text-align: center;
+        @include md-screen {
+            width: 90%;
+            min-width: 305px;
+            max-width: max(55rem,400px);
+        }
 
         &__paragraph {
-            padding: max(4.8rem, 20px);
+            padding: max(4.8rem,20px);
             font-weight: 600;
-            position: relative;
             line-height: 155.1%;
             letter-spacing: -.016em;
             color: #fff;
-            font-size: max(20px, 3.2rem);
+            font-size: max(20px,3.2rem);
+
+            @include sm-screen {
+                // width: 100%;
+            }
+
+            @include md-screen{
+                width: 90%;
+                min-width: 305px;
+                max-width: max(55rem,400px);
+            }
 
         }
     }
@@ -88,13 +118,20 @@
         margin-top: 35.8102059087vh;
         position: relative;
 
+        @include md-screen{
+            margin-top: max(20rem,100px);
+            padding-bottom: max(10rem,50px);
+        }
+
         .circles__container {
             position: absolute;
             bottom: 22.3813786929vh;
-            
+            @include md-screen{
+                display: none;
+            }
+
 
             .circle {
-                
                 width: max(30rem, 150px);
                 height: max(30rem, 150px);
                 display: inline-block;

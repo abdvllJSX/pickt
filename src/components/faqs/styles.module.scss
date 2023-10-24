@@ -11,6 +11,10 @@
     margin-inline: auto;
     padding-bottom: 10rem;
     
+
+    @include md-screen{
+        grid-template-columns: 1fr;
+    }
     &__left{
         width: fit-content;
 

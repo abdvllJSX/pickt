@@ -59,6 +59,9 @@
             font-size: max(18px,2rem);
             margin-inline: auto;
             margin-bottom: 3.5810205909vh;
+            @include sm-screen{
+                width: 100%;
+            }
         }
     }
 
@@ -70,6 +73,10 @@
         width: 100%;
         margin-top: max(56px, 12rem);
         pointer-events: none;
+
+        @include sm-screen{
+            visibility: hidden;
+        }
 
         &_decor:first-child {
             left: 2.3148148148vw;

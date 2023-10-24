@@ -12,6 +12,10 @@
         justify-content: space-between;
         padding-left: 16rem;
 
+        @include sm-screen{
+            padding-left: 8rem;
+        }
+
         h2 {
             position: relative;
             width: max(250px,62rem);
@@ -20,10 +24,15 @@
             font-size: max(36px, 9.6rem);
             line-height: 104.1%;
             letter-spacing: -.036em;
+            @include sm-screen{
+                // width: 100%;
+
+            }
 
             img{
                 position: absolute;
                 z-index: 2;
+                display: none;
                 bottom: 14rem;
                 right: 8rem;
                 width: max(8.7rem,40px);
@@ -39,6 +48,10 @@
             justify-content: flex-end;
             gap: max(2rem, 15px);
             padding-right: 12rem;
+
+            @include md-screen{
+                display: none;
+            }
 
             button {
                 border: 1px solid  #ef3867;
@@ -78,6 +91,10 @@
 
                 @include md-screen{
                     width: calc((100% - ($slides-to-Show-md__cel - 1) * max(2.5rem, 15px))/$slides-to-Show-md__cel);
+                }
+
+                @include md-screen{
+                    width: calc((100% - ($slides-to-Show-mobile__cel - 1) * max(2.5rem, 15px))/$slides-to-Show-mobile__cel);
                 }
 
 

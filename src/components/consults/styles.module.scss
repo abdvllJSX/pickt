@@ -11,6 +11,11 @@
         align-items: flex-end;
         justify-content: space-between;
         padding-left: 16rem;
+        @include sm-screen{
+            padding-left: 8rem;
+        }
+
+    
 
         h2 {
             width: max(270px, 71rem);
@@ -32,6 +37,10 @@
             gap: max(2rem, 15px);
             padding-right: 12rem;
 
+            @include sm-screen{
+                display: none;
+            } 
+
             button {
                 border: 1px solid hsla(0, 0%, 100%, .4);
                 width: max(11rem, 80px);
@@ -52,7 +61,6 @@
         margin-left: 12rem;
 
         &__card {
-            width: 40rem;
             flex-shrink: 0;
             width: calc((100% - ($slides-to-Show-desktop - 1)* max(2.5rem, 15px))/$slides-to-Show-desktop);
             padding: max(1rem, 8px);
@@ -64,16 +72,20 @@
                 width: calc((100% - ($slides-to-Show-md - 1)* max(2.5rem, 15px))/$slides-to-Show-md);
             }
 
+            @include sm-screen {
+                width: calc((100% - ($slides-to-Show-mobile - 1)* max(2.5rem, 15px))/$slides-to-Show-mobile);
+            }
+
             .img {
                 width: 100%;
                 height: auto;
                 overflow: hidden;
                 position: relative;
                 border-radius: max(2.7rem, 16px);
+                
 
                 img {
                     aspect-ratio: 311/290;
-
                     overflow: hidden;
 
                 }

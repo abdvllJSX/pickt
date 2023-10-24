@@ -16,6 +16,10 @@
         letter-spacing: -.042em;
         color: #030303;
         width: max(111rem, 500px);
+
+        @include sm-screen {
+            width: 100%;
+        }
     }
 
     &__content {
@@ -23,10 +27,19 @@
         grid-template-columns: 1fr 1fr;
         padding-top: max(1rem, 10px);
 
+        @include md-screen {
+            position: relative;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: max(10rem, 70px);
+            padding-top: max(3rem, 30px);
+        }
+
         &__left {
             width: fit-content;
             position: relative;
             margin-top: -30rem;
+
 
             .about {
                 position: relative;
@@ -34,6 +47,10 @@
                 // aspect-ratio: 980/1233;
                 height: auto;
                 object-fit: cover;
+                
+                @include md-screen{
+                    width: 100%;
+                }
             }
 
             .balance {
@@ -52,6 +69,13 @@
             flex-direction: column;
 
             &__top {
+                @include md-screen {
+                    padding-inline: 16rem;
+                    width: -moz-fit-content;
+                    width: fit-content;
+                    margin-left: auto;
+                }
+
                 p {
                     font-size: max(18px, 2rem);
                     width: max(38rem, 350px);
@@ -60,6 +84,7 @@
                     letter-spacing: -.021em;
                     color: #293a40;
                     margin-bottom: max(20px, 4rem);
+
                 }
 
                 .btn {
@@ -85,6 +110,12 @@
                 letter-spacing: -.042em;
                 color: #2e2e2e;
                 font-size: max(30px, 6.4rem);
+                @include md-screen{
+                    align-self: flex-end;
+                    position: absolute;
+                    margin-right: 10rem;
+                    bottom: 0;
+                }
             }
         }
     }
@@ -140,7 +171,7 @@
         button {
             color: #fff;
             text-align: center;
-            font-size: max(18px,2.4rem);
+            font-size: max(18px, 2.4rem);
             width: max(21rem, 140px);
             height: max(21rem, 140px);
             background: #5e48db;

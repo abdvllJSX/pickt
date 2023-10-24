@@ -12,6 +12,10 @@
         justify-content: space-between;
         padding-left: 16rem;
 
+        @include sm-screen{
+            padding-left: 8rem;
+        }
+
         h2 {
             width: max(270px, 71rem);
             color: #fff;
@@ -46,6 +50,9 @@
             gap: max(2rem, 15px);
             padding-right: 12rem;
 
+            @include md-screen{
+                display:  none;
+            }
             button {
                 border: 1px solid hsla(0, 0%, 100%, .4);
                 width: max(11rem, 80px);
@@ -76,6 +83,10 @@
 
                 @include md-screen {
                     width: calc((100% - ($slides-to-Show-md__live - 1) * max(2.5rem, 15px)) / $slides-to-Show-md__live);
+                }
+
+                @include sm-screen{
+                    width: calc((100% - ($slides-to-Show-mobile__live - 1) * max(2.5rem, 15px)) / $slides-to-Show-mobile__live);
                 }
 
                 &__top {

@@ -30,7 +30,7 @@ export default function index() {
     return (
         <section className={styles.engage__container}>
             <div className={styles.engage__container__top}>
-                <h2 data-animation-id = 'paragraph' data-animation = "scale-svg">Engage<span>industry </span><span>big</span><span>names </span>and all that stuff  <img src="/star.svg" alt="" id = "svgImageAnime"/></h2>
+                <h2 data-animation-id = 'paragraph' data-animation = "scale-svg">Engage <span>industry </span><span>big </span><span>names </span>and all that stuff<img src="/star.svg" alt="" id = "svgImageAnime"/></h2>
                 <div className={styles.engage__container__top__right}>
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
