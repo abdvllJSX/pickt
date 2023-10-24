@@ -27,42 +27,30 @@ export default function Index({ loadedImages, loaderVisible }) {
         },
     ]
 
-    useEffect(() => {
-        const splitParagraph = new SplitType('#paragraphAnime', { types: 'lines, words' })
-        splitParagraph.lines.forEach((line, index) => {
-            gsap.set(".line", {
-                y: "30px",
-                opacity: "0",
-                visibility: "hidden"
+    if (!loaderVisible) {
+        useEffect(() => {
+            const splitParagraph = new SplitType('#paragraphAnime', { types: 'lines' })
+            splitParagraph.lines.forEach((line, index) => {
+                gsap.set(".line", {
+                    y: "50px",
+                    opacity: "0",
+                    visibility: "hidden"
+                })
+                gsap.to(".line", {
+                    delay: initialDelay + 1.5,
+                    stagger: .05,
+                    y: "0",
+                    visibility: "visible",
+                    duration: .5,
+                    opacity: "1",
+                    ease: "easeOut",
+                })
             })
-            gsap.to(".line", {
-                delay: initialDelay + 4,
-                stagger: .05,
-                y: "0",
-                visibility: "visible",
-                duration: .9,
-                opacity: "1",
-                ease: "easeOut",
-            })
-        })
-        splitParagraph.words.forEach((line, index) => {
-            gsap.set(".word", {
-                y: "7px",
-                opacity: "0.3",
-                visibility: "hidden"
-            })
-            gsap.to(".word", {
-                delay: initialDelay + 4,
-                stagger: .03,
-                y: "0",
-                visibility: "visible",
-                duration: .2,
-                opacity: "1",
-                ease: "easeOut",
-            })
-        })
-    }, [])
-    
+        }, [])
+    }
+
+
+
     const heroImageAnime = {
         initial: {
             scale: 0,
@@ -97,16 +85,16 @@ export default function Index({ loadedImages, loaderVisible }) {
 
     const btnAnime = {
         initial: {
-            y: "30px",
+            y: "60px",
             visibility: "hidden",
         },
         animate: {
             visibility: "visible",
             y: "0",
             transition: {
-                delay: initialDelay + 2,
-                duration: .7,
-                ease: [0.34, 1.56, 0.64, 1]
+                delay: initialDelay + 2.7,
+                duration: .8,
+                ease: [0.25, 1, 0.5, 1]
             }
         }
     }

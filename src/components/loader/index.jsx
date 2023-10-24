@@ -19,7 +19,7 @@ export default function Index({ loadedImages, loaderVisible }) {
     const transforms = {
         initial: {
             x: "100%",
-            height: "100vh"
+            height: "100vh",
         },
 
         animate: (i) => ({
@@ -30,6 +30,8 @@ export default function Index({ loadedImages, loaderVisible }) {
                 ease: [0.61, 1, 0.88, 1]
             }
         }),
+         
+        
 
         exit: (i) => ({
             x: "-100%",
@@ -82,20 +84,20 @@ export default function Index({ loadedImages, loaderVisible }) {
             {loaderVisible &&
                 <motion.div className={styles.loader__container}>
                     <motion.p variants={counterAnime} animate={loadedImages == "100" ? "exit" : "animate"}>{`${loadedImages}`.padStart(3, 0)}%</motion.p>
-                    <motion.div className={styles.texts} >
+                     <motion.h1 className={styles.texts} >
                         {loadedImages == 100 &&
                             text.map((text, index) => {
                                 return (
-                                    <motion.h1 key={index} variants={textAnime} initial="initial" animate="animate" exit="exit" custom={index}>{text}</motion.h1>
+                                    <motion.span key={index} variants={textAnime} initial="initial" animate="animate" exit="exit" custom={index}>{text}</motion.span>
                                 )
                             })
                         }
-                    </motion.div>
+                    </motion.h1> 
                     <motion.div className={styles.background}>
                         {
                             [...Array(4)].map((_, index) => {
                                 return (
-                                    <motion.div className={styles.colur} custom={index} variants={transforms} initial="initial" animate={loadedImages == 100 ? "animate" : "initial"} exit="exit" key={index}></motion.div>
+                                    <motion.div className={styles.colur} custom={index} variants={transforms} initial="initial" animate={loadedImages == 100 && "animate" } exit="exit" key={index}></motion.div>
                                 )
                             })
                         }
