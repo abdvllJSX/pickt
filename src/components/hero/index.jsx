@@ -37,7 +37,7 @@ export default function Index({ loadedImages, loaderVisible }) {
                     visibility: "hidden"
                 })
                 gsap.to(".line", {
-                    delay: initialDelay + 1.8,
+                    delay: initialDelay + 4,
                     stagger: .05,
                     y: "0",
                     visibility: "visible",
