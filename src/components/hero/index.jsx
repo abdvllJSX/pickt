@@ -27,7 +27,7 @@ export default function Index({ loadedImages, loaderVisible }) {
         },
     ]
 
-    if (!loaderVisible) {
+    
         useEffect(() => {
             const splitParagraph = new SplitType('#paragraphAnime', { types: 'lines' })
             splitParagraph.lines.forEach((line, index) => {
@@ -47,7 +47,7 @@ export default function Index({ loadedImages, loaderVisible }) {
                 })
             })
         }, [])
-    }
+    
 
 
 
