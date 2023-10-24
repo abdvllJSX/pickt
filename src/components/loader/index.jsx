@@ -18,7 +18,8 @@ export default function Index({ loadedImages, loaderVisible }) {
     // PANEL ANIMATION
     const transforms = {
         initial: {
-            x: "100%"
+            x: "100%",
+            height: "100vh"
         },
 
         animate: (i) => ({
