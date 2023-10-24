@@ -93,7 +93,7 @@
                     width: calc((100% - ($slides-to-Show-md__cel - 1) * max(2.5rem, 15px))/$slides-to-Show-md__cel);
                 }
 
-                @include md-screen{
+                @include sm-screen{
                     width: calc((100% - ($slides-to-Show-mobile__cel - 1) * max(2.5rem, 15px))/$slides-to-Show-mobile__cel);
                 }
 

@@ -27,7 +27,7 @@
         grid-template-columns: 1fr 1fr;
         padding-top: max(1rem, 10px);
 
-        @include md-screen {
+        @include sm-screen {
             position: relative;
             display: flex;
             flex-direction: column-reverse;
@@ -48,7 +48,7 @@
                 height: auto;
                 object-fit: cover;
                 
-                @include md-screen{
+                @include sm-screen{
                     width: 100%;
                 }
             }
@@ -69,7 +69,7 @@
             flex-direction: column;
 
             &__top {
-                @include md-screen {
+                @include sm-screen {
                     padding-inline: 16rem;
                     width: -moz-fit-content;
                     width: fit-content;
@@ -110,7 +110,7 @@
                 letter-spacing: -.042em;
                 color: #2e2e2e;
                 font-size: max(30px, 6.4rem);
-                @include md-screen{
+                @include sm-screen{
                     align-self: flex-end;
                     position: absolute;
                     margin-right: 10rem;
