@@ -80,9 +80,9 @@ export default function index() {
                 <Marquee speed={80} direction="left" autoFill={true}>
                     <div className={styles.wrapper}>
                         {
-                            cards.map(card => {
+                            cards.map((card, index) => {
                                 return (
-                                    <div className={styles.marquee__item}>
+                                    <div className={styles.marquee__item} key={index}>
                                         <img src={`${card.img}`} alt={card.text} />
                                         <p>{card.text}</p>
                                     </div>

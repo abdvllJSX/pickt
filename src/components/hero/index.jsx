@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import SplitType from 'split-type';
 import React, { useState, useEffect, forwardRef } from 'react';
 
-export default function index({ loadedImages, loaderVisible }) {
+export default function Index({ loadedImages, loaderVisible }) {
     const initialDelay = 2
 
     const images = [
