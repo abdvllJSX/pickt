@@ -192,11 +192,10 @@
         .btn {
             font-weight: 500;
             letter-spacing: -.016em;
-            color: #fff;
+            color: white;
             width: max(22.7rem, 170px);
             height: max(7.2rem, 50px);
             background: #020813;
-            font-size: max(18px, 2rem);
             border-radius: max(2rem, 12px);
             transition: all .5s var(--ease-out-quart);
         }
