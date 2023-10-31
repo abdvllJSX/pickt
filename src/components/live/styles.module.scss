@@ -31,12 +31,19 @@
                 right: 32rem;                
                 width: max(14rem,80px);
                 z-index: 2;
+
+                @include sm-screen{
+                    visibility: hidden; 
+                }
             }
 
             .image2{
                 position: absolute;
                 bottom: max(20px,5rem);
                 width: max(9rem,50px);
+                @include sm-screen{
+                    visibility: hidden; 
+                }
             }
 
             span {
