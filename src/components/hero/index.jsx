@@ -27,10 +27,10 @@ export default function Index({ loadedImages, loaderVisible }) {
         },
     ]
 
-if(loaderVisible == false){
-    
-    useEffect(() => {
-        const splitParagraph = new SplitType('#paragraphAnime', { types: 'lines' })
+
+
+        if (loaderVisible == false) {
+            const splitParagraph = new SplitType('#paragraphAnime', { types: 'lines' })
             splitParagraph.lines.forEach((line, index) => {
                 gsap.set(".line", {
                     y: "50px",
@@ -47,9 +47,9 @@ if(loaderVisible == false){
                     ease: "easeOut",
                 })
             })
-    }, [])
+        }
 
-}
+
 
 
 
