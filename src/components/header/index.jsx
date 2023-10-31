@@ -60,7 +60,7 @@ const Header = forwardRef(function Index({ loaderVisible }, ref) {
 
             </motion.nav>
             <motion.div className={styles.nav__mobile}>
-                <motion.div className={styles.nav__left} animate={isActive ? { backgroundColor: "#5E48DB", transition: { duration: .5, ease: "easeIn" } } : { backgroundColor: "#fff", transition: { delay: .8, ease: "easeIn", duration: .5 } }}>
+                <motion.div className={styles.nav__left} animate={isActive ? { backgroundColor: "#5E48DB", transition: { duration: .5 } } : { backgroundColor: "#fff", transition: { delay: .8, ease: "easeIn", duration: .5 } }}>
                     <div className={styles.logo}>
                         <img ref={ref} src={isActive ? "/logowhite.svg" : "/pickt-logo.svg"} alt="" />
                     </div>

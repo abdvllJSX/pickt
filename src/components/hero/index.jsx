@@ -27,9 +27,10 @@ export default function Index({ loadedImages, loaderVisible }) {
         },
     ]
 
+if(loaderVisible == false){
     
-        useEffect(() => {
-            const splitParagraph = new SplitType('#paragraphAnime', { types: 'lines' })
+    useEffect(() => {
+        const splitParagraph = new SplitType('#paragraphAnime', { types: 'lines' })
             splitParagraph.lines.forEach((line, index) => {
                 gsap.set(".line", {
                     y: "50px",
@@ -37,7 +38,7 @@ export default function Index({ loadedImages, loaderVisible }) {
                     visibility: "hidden"
                 })
                 gsap.to(".line", {
-                    delay: initialDelay + 4,
+                    delay: initialDelay + 1,
                     stagger: .05,
                     y: "0",
                     visibility: "visible",
@@ -46,8 +47,9 @@ export default function Index({ loadedImages, loaderVisible }) {
                     ease: "easeOut",
                 })
             })
-        }, [])
-    
+    }, [])
+
+}
 
 
 
@@ -92,7 +94,7 @@ export default function Index({ loadedImages, loaderVisible }) {
             visibility: "visible",
             y: "0",
             transition: {
-                delay: initialDelay + 2.2,
+                delay: initialDelay + 1.5,
                 duration: .8,
                 ease: [0.25, 1, 0.5, 1]
             }
