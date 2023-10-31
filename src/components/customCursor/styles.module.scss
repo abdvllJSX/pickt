@@ -9,6 +9,7 @@
     border-radius: 50%;
 
     @include sm-screen{
-        display: none;
+        background-color: red;
+        visibility: hidden;
     }
 }

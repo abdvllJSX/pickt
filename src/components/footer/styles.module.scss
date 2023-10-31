@@ -76,6 +76,10 @@
             justify-content: center;
             align-items: center;
             font-size: max(2rem, 12px);
+            @include sm-screen{
+                font-size: 10px;
+                text-align: center;
+            }
 
         }
 
