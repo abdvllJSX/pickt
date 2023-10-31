@@ -106,6 +106,10 @@
                 left: 50%;
                 transform: translateX(-50%);
                 white-space: nowrap;
+
+                p{
+                    font-size: max(15px, 1.8rem);
+                }
             }
 
             &__bottom {
