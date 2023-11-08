@@ -124,8 +124,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        
         {
-
           <AnimatePresence mode='wait'>
             loaderVisible ?
             <Loader loadedImages={loadedImages} loaderVisible={loaderVisible} />
